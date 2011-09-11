@@ -1,4 +1,5 @@
 (require 'php-mode)
+(require 'smarttabs)
 
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 

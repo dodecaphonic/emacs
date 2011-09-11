@@ -10,6 +10,9 @@
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
 
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+
 (defvar emacs-root (expand-file-name "~/"))
 
 ;; add all the elisp directories under ~/.emacs.d to load path
