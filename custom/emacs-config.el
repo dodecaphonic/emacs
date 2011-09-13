@@ -1,3 +1,6 @@
+(setq backup-directory-alist
+      (list (cons "." (expand-file-name "backup" (concat emacs-root ".emacs.d")))))
+
 ;; General emacs configuration
 (global-linum-mode t) ;; Show line numbers
 (setq debug-on-error t) ;; Always show me what went wrong
