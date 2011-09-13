@@ -14,8 +14,7 @@
 	    (set (make-local-variable 'indent-tabs-mode) 'nil)
 	    (set (make-local-variable 'tab-width) 2)
 	    (imenu-add-to-menubar "IMENU")
-	    (ruby-electric-mode t)
-            (inf-ruby-keys)))
+	    (ruby-electric-mode t)))
 
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
