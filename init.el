@@ -32,7 +32,6 @@
 (load-directory (concat emacs-root ".emacs.d/vendor"))
 (load-directory (concat emacs-root ".emacs.d/utilities"))
 
-(vendor 'php-mode)
 (vendor 'coffee-mode)
 (vendor 'color-theme)
 (vendor 'js2-mode)
