@@ -36,7 +36,6 @@
 (vendor 'color-theme)
 (vendor 'js2-mode)
 (vendor 'magit)
-(vendor 'rainbow-mode)
 
 ;; Loads up what makes emacs *my* emacs
 (load-directory (concat emacs-root ".emacs.d/custom"))
