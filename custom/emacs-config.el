@@ -37,13 +37,11 @@
 ;; Insert at current point, mousie, don't drive me crazy!
 (setq mouse-yank-at-point t)
 
-(custom-set-faces
- '(default ((t (:inherit nil :stipple nil :background "#0C1021" :foreground "#F8F8F8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 160 :width normal :foundry "apple" :family "Inconsolata")))))
 (setq mac-command-modifier 'meta)
 
 ;; Load my preferred themes
 (require 'color-theme)
-(color-theme-blackboard)
+(color-theme-solarized-dark)
 
 ;; Start server for emacsclient requests
 (server-start)

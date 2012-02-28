@@ -7,3 +7,6 @@
 [submodule "vendor/js2-mode"]
 	path = vendor/js2-mode
 	url = https://github.com/mooz/js2-mode
+[submodule "vendor/rinari"]
+	path = vendor/rinari
+	url = git://github.com/eschulte/rinari.git
