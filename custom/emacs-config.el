@@ -41,7 +41,7 @@
 
 ;; Load my preferred themes
 (require 'color-theme)
-(color-theme-solarized-dark)
+(color-theme-blackboard)
 
 ;; Start server for emacsclient requests
 (server-start)
