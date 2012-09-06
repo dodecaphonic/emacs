@@ -15,6 +15,7 @@
 (column-number-mode t)
 (set-face-attribute 'default nil :height 120)
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(load-theme 'solarized-dark t)
 
 ;; Custom keybindings
 ;;(global-set-key "\C-c\C-a" 'mark-whole-buffer)
@@ -39,10 +40,6 @@
 
 (setq mac-command-modifier 'meta)
 
-;; Load my preferred themes
-(require 'color-theme)
-(color-theme-blackboard)
-
 ;; Start server for emacsclient requests
 (server-start)
 
@@ -54,6 +51,8 @@
 
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+(set-frame-font "Inconsolata-13")
 
 ;; TRAMP
 (setq tramp-default-method "ssh")
