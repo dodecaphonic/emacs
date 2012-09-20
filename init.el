@@ -18,6 +18,10 @@
   (add-path ".emacs.d/utilities")
 )
 
+;; Guarantees emacs installs every required package
+(load-library
+ (expand-file-name (concat emacs-root ".emacs.d/bootstrap.el")))
+
 ;; Loads all .el files in a directory
 (load-library
  (expand-file-name (concat emacs-root ".emacs.d/load-directory.el")))
@@ -25,11 +29,7 @@
 (load-directory (concat emacs-root ".emacs.d/vendor"))
 (load-directory (concat emacs-root ".emacs.d/utilities"))
 
-(vendor 'coffee-mode)
-(vendor 'color-theme)
 (vendor 'js2-mode)
-(vendor 'magit)
-(vendor 'rinari)
 
 ;; Loads up what makes emacs *my* emacs
 (load-directory (concat emacs-root ".emacs.d/custom"))
