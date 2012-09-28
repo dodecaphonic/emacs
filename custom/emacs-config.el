@@ -52,7 +52,7 @@
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
-(set-frame-font "Inconsolata-13")
+(set-frame-font "Source Code Pro-11")
 
 ;; TRAMP
 (setq tramp-default-method "ssh")
