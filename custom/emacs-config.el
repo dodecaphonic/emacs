@@ -15,7 +15,7 @@
 (column-number-mode t)
 (set-face-attribute 'default nil :height 120)
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(load-theme 'solarized-dark t)
+(load-theme 'sanityinc-tomorrow-blue t)
 
 ;; Custom keybindings
 ;;(global-set-key "\C-c\C-a" 'mark-whole-buffer)
@@ -77,7 +77,8 @@
 (when (and window-system (eq system-type 'darwin))
   ;; When started from Emacs.app or similar, ensure $PATH
   ;; is the same the user would see in Terminal.app
-  (set-exec-path-from-shell-PATH))
+  (set-exec-path-from-shell-PATH)
+  (set-frame-font "Source Code Pro-13"))
 
 ;; load my snippets
 (yas/load-directory (expand-file-name "~/.emacs.d/snippets"))
