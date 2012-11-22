@@ -11,6 +11,8 @@
 (setq require-final-newline t)
 (setq inhibit-startup-message t)
 (global-font-lock-mode t)
+(global-auto-revert-mode t)
+(global-hl-line-mode t)
 (show-paren-mode t)
 (column-number-mode t)
 (set-face-attribute 'default nil :height 120)
