@@ -32,7 +32,6 @@
 (load-directory (concat emacs-root ".emacs.d/utilities"))
 
 (vendor 'js2-mode)
-(vendor 'ruby-electric)
 
 ;; Loads up what makes emacs *my* emacs
 (load-directory (concat emacs-root ".emacs.d/custom"))
