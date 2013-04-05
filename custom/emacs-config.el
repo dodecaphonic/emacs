@@ -14,6 +14,7 @@
 (global-auto-revert-mode t)
 (global-hl-line-mode t)
 (show-paren-mode t)
+(electric-pair-mode t)
 (column-number-mode t)
 (set-face-attribute 'default nil :height 120)
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
