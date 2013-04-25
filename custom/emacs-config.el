@@ -28,6 +28,12 @@
 (global-set-key [f5] 'call-last-kbd-macro)
 (global-set-key [f7] 'compile)
 (global-set-key [f8] 'gdb)
+(global-set-key (kbd "C-<backspace>") (lambda ()
+                                        (interactive)
+                                        (kill-line 0)
+                                        (indent-according-to-mode)))
+(global-set-key [(meta shift up)] 'move-line-up)
+(global-set-key [(meta shift down)] 'move-line-down)
 
 ;; Auto-compile .emacs after editing
 (defun autocompile nil
