@@ -5,7 +5,8 @@
   '(clojure-mode coffee-mode expand-region gist inf-ruby ruby-mode
     magit markdown-mode solarized-theme yaml-mode rspec-mode csharp-mode
     rainbow-mode json scala-mode2 rvm slime yasnippet-bundle
-    color-theme-sanityinc-tomorrow gist org ack-and-a-half projectile)
+    color-theme-sanityinc-tomorrow gist org ack-and-a-half projectile
+    htmlize)
   "A list of packages to ensure are installed at launch.")
 
 (defun bootstrap-required-packages-installed-p ()
