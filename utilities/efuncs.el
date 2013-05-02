@@ -52,3 +52,12 @@
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 
+(defun duplicate-current-line ()
+  (interactive)
+  (back-to-indentation)
+  (kill-line)
+  (yank)
+  (newline-and-indent)
+  (yank))
+
+

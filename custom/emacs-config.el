@@ -25,6 +25,7 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-w" 'backward-kill-word)
 (global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-d" 'duplicate-current-line)
 (global-set-key [f5] 'call-last-kbd-macro)
 (global-set-key [f7] 'compile)
 (global-set-key [f8] 'gdb)
@@ -101,5 +102,3 @@
   ;; If there is more than one, they won't work right.
  '(php-mode-force-pear t)
  '(safe-local-variable-values (quote ((encoding . binary)))))
-
-
