@@ -19,6 +19,8 @@
 (set-face-attribute 'default nil :height 120)
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (load-theme 'sanityinc-tomorrow-blue t)
+(setq fci-rule-width 1)
+(setq fci-rule-color "red")
 
 ;; Custom keybindings
 ;;(global-set-key "\C-c\C-a" 'mark-whole-buffer)
