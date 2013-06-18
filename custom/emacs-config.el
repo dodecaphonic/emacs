@@ -71,6 +71,7 @@
 (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
 
 (require 'ido)
+(require 'sr-speedbar)
 
 ;; sets text-mode as the default, instead of fundamental-mode
 (setq major-mode 'text-mode)
