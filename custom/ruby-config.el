@@ -13,11 +13,6 @@
 	    (set (make-local-variable 'tab-width) 2)
 	    (imenu-add-to-menubar "IMENU")))
 
-(add-hook 'prog-mode-hook 'fci-mode)
-(add-hook 'prog-mode-hook
-          (lambda()
-            (set-fill-column 80)))
-
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
 

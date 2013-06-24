@@ -36,3 +36,16 @@
 ;; Loads up what makes emacs *my* emacs
 (load-directory (concat emacs-root "custom"))
 (shell)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(php-mode-force-pear t)
+ '(safe-local-variable-values (quote ((encoding . utf-8) (encoding . binary)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
