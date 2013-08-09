@@ -13,6 +13,10 @@
 	    (set (make-local-variable 'tab-width) 2)
 	    (imenu-add-to-menubar "IMENU")))
 
+(add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
+(custom-set-variables 
+ '(ruby-refactor-add-parens t))
+
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
 
