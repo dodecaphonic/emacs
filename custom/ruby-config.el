@@ -15,7 +15,8 @@
 
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
 (custom-set-variables 
- '(ruby-refactor-add-parens t))
+ '(ruby-refactor-add-parens t)
+ '(ruby-refactor-keymap-prefix (kbd "C-c t")))
 
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
