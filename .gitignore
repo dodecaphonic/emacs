@@ -4,3 +4,5 @@ auto-save-list
 url
 *.elc
 elpa
+projectile*
+var/
