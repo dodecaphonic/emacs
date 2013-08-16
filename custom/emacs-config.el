@@ -2,25 +2,13 @@
       (list (cons "." (expand-file-name "backup" (concat emacs-root ".emacs.d")))))
 
 ;; General emacs configuration
-(global-linum-mode t) ;; Show line numbers
 (setq debug-on-error t) ;; Always show me what went wrong
-(setq menu-bar-mode nil)
-(setq frame-title-format "%b - emacs")
 (setq-default indent-tabs-mode nil)
 (setq transient-mark-mode t)
 (setq require-final-newline t)
 (setq inhibit-startup-message t)
-(global-font-lock-mode t)
 (global-auto-revert-mode t)
-(global-hl-line-mode t)
-(show-paren-mode t)
-(electric-pair-mode t)
-(column-number-mode t)
-(set-face-attribute 'default nil :height 120)
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(load-theme 'sanityinc-tomorrow-blue t)
-(setq fci-rule-width 1)
-(setq fci-rule-color "red")
 
 ;; Custom keybindings
 ;;(global-set-key "\C-c\C-a" 'mark-whole-buffer)
@@ -52,25 +40,9 @@
 ;; Start server for emacsclient requests
 (server-start)
 
-(ido-mode t)
-(setq ido-enable-flex-matching t) ;; enable fuzzy matching
-
-(linum-mode 1)
-(setq linum-format "%d ")
-
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 
-(set-frame-font "Source Code Pro-11")
-
-;; TRAMP
-(setq tramp-default-method "ssh")
-
-(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-
-(require 'ido)
 (require 'sr-speedbar)
 
 ;; sets text-mode as the default, instead of fundamental-mode
@@ -83,15 +55,6 @@
 
 ;; Pretty colors in shell
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-(when (and window-system (eq system-type 'darwin))
-  ;; When started from Emacs.app or similar, ensure $PATH
-  ;; is the same the user would see in Terminal.app
-  (set-exec-path-from-shell-PATH)
-  (set-frame-font "Source Code Pro-13"))
-
-;; load my snippets
-(yas/load-directory (expand-file-name "~/.emacs.d/snippets"))
 
 (windmove-default-keybindings)
 

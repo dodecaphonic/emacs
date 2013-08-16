@@ -21,7 +21,4 @@
 (autoload 'run-ruby "inf-ruby"
   "Run an inferior Ruby process")
 
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-
-(rvm-use "1.9.3" "default")
+(rvm-use "2.0.0" "default")
