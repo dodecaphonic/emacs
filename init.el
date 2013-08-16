@@ -31,8 +31,6 @@
 (load-directory (concat emacs-root "vendor"))
 (load-directory (concat emacs-root "utilities"))
 
-(vendor 'js2-mode)
-
 ;; Loads up what makes emacs *my* emacs
 (load-directory (concat emacs-root "custom"))
 (shell)
