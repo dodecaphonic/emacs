@@ -1,7 +1,5 @@
 (require 'yaml-mode)
 
-;; Untabifies ruby file and replaces everything with spaces. Also
-;; adds IMENU to bar indicating every function's position.
 (add-hook 'ruby-mode-hook
 	  (lambda()
 	    (add-hook 'local-write-file-hooks
@@ -10,8 +8,7 @@
 			   (untabify (point-min) (point-max))
 			   (delete-trailing-whitespace))))
 	    (set (make-local-variable 'indent-tabs-mode) 'nil)
-	    (set (make-local-variable 'tab-width) 2)
-	    (imenu-add-to-menubar "IMENU")))
+	    (set (make-local-variable 'tab-width) 2)))
 
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
 (custom-set-variables 
