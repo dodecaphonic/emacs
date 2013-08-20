@@ -6,3 +6,5 @@ url
 elpa
 projectile*
 var/
+bookmarks
+session.*
