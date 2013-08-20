@@ -27,6 +27,6 @@
   (package-refresh-contents)
   (message "%s" " done.")
   ;; install the missing packages
-  (dolist (p required-packages)
+  (dolist (p dodecaphonic/required-packages)
     (when (not (package-installed-p p))
       (package-install p))))
