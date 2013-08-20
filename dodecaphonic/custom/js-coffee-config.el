@@ -12,6 +12,7 @@
 (defun coffee-custom ()
   "coffee-mode-hook"
  (set (make-local-variable 'tab-width) 2)
+ (set (make-local-variable 'coffee-tab-width) 2)
  (setq coffee-debug-mode t)
  (local-set-key "\C-c\C-b" 'coffee-compile-buffer))
 
