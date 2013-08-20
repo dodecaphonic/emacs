@@ -1,5 +1,10 @@
+(require 'flx-ido)
 (ido-mode                      t)
 (setq ido-everywhere           t)
 (setq ido-enable-flex-matching t)
+(flx-ido-mode                  t)
+(setq ido-use-faces          nil)
 
+(projectile-global-mode)
+(setq projectile-indexing-method 'git)
 (windmove-default-keybindings)

@@ -7,7 +7,7 @@
     rainbow-mode json scala-mode2 rvm slime yasnippet-bundle
     color-theme-sanityinc-tomorrow gist org ack-and-a-half projectile
     htmlize fill-column-indicator ruby-hash-syntax sr-speedbar
-    multi-term ruby-refactor)
+    multi-term ruby-refactor js2-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun bootstrap-required-packages-installed-p ()
