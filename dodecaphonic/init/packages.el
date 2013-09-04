@@ -13,7 +13,7 @@
     rainbow-mode json scala-mode2 rvm slime yasnippet-bundle
     color-theme-sanityinc-tomorrow gist org ack-and-a-half projectile
     htmlize fill-column-indicator ruby-hash-syntax sr-speedbar
-    multi-term ruby-refactor flx-ido)
+    multi-term ruby-refactor flx-ido smart-tabs-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()
