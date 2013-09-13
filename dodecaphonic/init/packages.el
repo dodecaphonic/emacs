@@ -9,11 +9,11 @@
 
 (defvar dodecaphonic/required-packages
   '(clojure-mode coffee-mode expand-region gist inf-ruby ruby-mode
-    magit markdown-mode solarized-theme yaml-mode rspec-mode csharp-mode
+    magit markdown-mode yaml-mode rspec-mode csharp-mode
     rainbow-mode json scala-mode2 rvm slime yasnippet-bundle
     color-theme-sanityinc-tomorrow gist org ack-and-a-half projectile
     htmlize fill-column-indicator ruby-hash-syntax sr-speedbar
-    multi-term ruby-refactor flx-ido smart-tabs-mode)
+    multi-term ruby-refactor flx-ido smart-tabs-mode scss-mode)
   "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()

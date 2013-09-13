@@ -7,14 +7,15 @@
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;; Markdown
-(add-to-list 'auto-mode-alist '("\\.md$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 ;; HTML
 (add-to-list 'auto-mode-alist '("\\html.erb$" . html-mode))
 
-;; CSS
+;; CSS, SCSS
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.less$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.scss.erb$" . scss-mode))
 
 ;; Scala
 (add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))

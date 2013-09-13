@@ -1,7 +1,7 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (setq menu-bar-mode nil)
 (setq frame-title-format "%b - emacs")
-(load-theme 'sanityinc-tomorrow-blue t)
+(load-theme 'sanityinc-tomorrow-night t)
 
 (global-linum-mode t) ;; Show line numbers
 (setq linum-format "%d ")
