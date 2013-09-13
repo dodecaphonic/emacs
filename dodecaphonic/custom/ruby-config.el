@@ -8,7 +8,8 @@
 			   (untabify (point-min) (point-max))
 			   (delete-trailing-whitespace))))
 	    (set (make-local-variable 'indent-tabs-mode) 'nil)
-	    (set (make-local-variable 'tab-width) 2)))
+	    (set (make-local-variable 'tab-width) 2)
+            (local-set-key (kbd "C-c =") 'dodecaphonic/align=)))
 
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
 (custom-set-variables 

@@ -25,6 +25,7 @@
 
 ;; Loads up what makes emacs *my* emacs
 (load-directory (concat emacs-root "dodecaphonic/settings"))
+(load-directory (concat emacs-root "dodecaphonic/commands"))
 (load-directory (concat emacs-root "dodecaphonic/custom"))
 
 (custom-set-variables
