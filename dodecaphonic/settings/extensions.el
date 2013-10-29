@@ -1,7 +1,7 @@
 ;; Ruby
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rake$" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . enh-ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
 
 ;; YAML
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
@@ -10,7 +10,8 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 ;; HTML
-(add-to-list 'auto-mode-alist '("\\html.erb$" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb$" . web-mode))
 
 ;; CSS, SCSS
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
