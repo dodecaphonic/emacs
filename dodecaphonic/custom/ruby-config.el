@@ -1,6 +1,6 @@
 (require 'yaml-mode)
 
-(add-hook 'enh-ruby-mode-hook
+(add-hook 'ruby-mode-hook
 	  (lambda()
 	    (add-hook 'local-write-file-hooks
 		      '(lambda()
@@ -12,8 +12,8 @@
             (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
             (local-set-key (kbd "C-c C-c") 'xmp)))
 
-(add-hook 'enh-ruby-mode-hook 'ruby-refactor-mode-launch)
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
+(add-hook 'ruby-mode-hook 'robe-mode)
 
 (custom-set-variables 
  '(ruby-refactor-add-parens t)

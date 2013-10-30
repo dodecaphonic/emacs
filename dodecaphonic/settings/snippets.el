@@ -1,6 +1,10 @@
-(yas/load-directory
- (expand-file-name "dodecaphonic/snippets" user-emacs-directory))
-
-(yas/global-mode)
+(setq yas-snippet-dirs
+      (list
+        (expand-file-name "dodecaphonic/snippets" user-emacs-directory)
+        (expand-file-name "vendor/yasnippet/snippets" user-emacs-directory)))
 
 (setq yas-prompt-functions '(yas/ido-prompt))
+
+(yas-global-mode 1)
+
+
