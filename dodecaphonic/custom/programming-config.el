@@ -6,6 +6,7 @@
   "Defaults for all children of prog-mode."
   (setq whitespace-line-column 80) ;; limit line length
   (setq whitespace-style '(face lines-tail))
+  (setq show-trailing-whitespace t)
   (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
   (local-set-key (kbd "C-c /") 'comment-region))
 
