@@ -8,6 +8,11 @@
   (setq whitespace-style '(face lines-tail))
   (setq show-trailing-whitespace t)
   (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
-  (local-set-key (kbd "C-c /") 'comment-region))
+  (local-set-key (kbd "C-c /") 'comment-region)
+  (add-hook 'local-write-file-hooks
+            '(lambda()
+               (save-excursion
+                 (untabify (point-min) (point-max))
+                 (delete-trailing-whitespace)))))
 
 (add-hook 'prog-mode-hook 'programming-custom)
