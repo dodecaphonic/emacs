@@ -16,3 +16,4 @@
                  (delete-trailing-whitespace)))))
 
 (add-hook 'prog-mode-hook 'programming-custom)
+(show-smartparens-global-mode +1)

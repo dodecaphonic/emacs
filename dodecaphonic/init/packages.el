@@ -13,7 +13,7 @@
     rainbow-mode json scala-mode2 slime yasnippet color-theme-sanityinc-tomorrow
     gist org ack-and-a-half projectile htmlize fill-column-indicator ruby-hash-syntax
     sr-speedbar multi-term ruby-refactor smart-tabs-mode scss-mode
-    robe web-mode grizzl js2-mode ensime)
+    robe web-mode grizzl js2-mode ensime smartparens)
  "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()

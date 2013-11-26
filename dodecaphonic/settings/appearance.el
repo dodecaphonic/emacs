@@ -19,4 +19,3 @@
   ;; is the same the user would see in Terminal.app
   (set-exec-path-from-shell-PATH)
   (set-frame-font "Source Code Pro-13"))
-
