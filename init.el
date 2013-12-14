@@ -4,9 +4,8 @@
 
 ;; add all the elisp directories under ~/.emacs.d to load path
 (labels ((add-path (p)
-	 (add-to-list 'load-path
-			(concat emacs-root p))))
-  (add-path "")
+         (add-to-list 'load-path
+                        (concat emacs-root p))))
   (add-path "dodecaphonic/custom")
   (add-path "vendor")
   (add-path "utilities")
@@ -37,7 +36,6 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#2d2d2d"))
- '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
  '(custom-safe-themes
    (quote
     ("d63e19a84fef5fa0341fa68814200749408ad4a321b6d9f30efc117aeaf68a2e" "337047491f7db019df2ba54483408d7d7faea0bda61e4c4f5e8cf2f4e3264478" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "3b68c1b83adeed5a87121839c36143aeaa25fbdcd65c815259b1fbb6f5cc536c" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" default)))
