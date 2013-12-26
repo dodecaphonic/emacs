@@ -5,7 +5,9 @@
             (set (make-local-variable 'indent-tabs-mode) 'nil)
             (set (make-local-variable 'tab-width) 2)
             (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
-            (local-set-key (kbd "C-c C-c") 'xmp)))
+            (local-set-key (kbd "C-c C-c") 'xmp)
+            (local-set-key (kbd "C-j") 'newline)
+            (local-set-key (kbd "RET") 'electric-indent-just-newline)))
 
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
 (add-hook 'ruby-mode-hook 'robe-mode)
@@ -18,4 +20,4 @@
   "Run an inferior Ruby process")
 
 (require 'chruby)
-;;(chruby "ruby-2.0.0-353")
+(chruby "ruby-2.0.0-353")
