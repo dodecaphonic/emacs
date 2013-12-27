@@ -9,6 +9,7 @@
             (local-set-key (kbd "C-j") 'newline)
             (local-set-key (kbd "RET") 'electric-indent-just-newline)))
 
+(add-hook 'ruby-mode-hook 'ruby-tools-mode)
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
 (add-hook 'ruby-mode-hook 'robe-mode)
 
