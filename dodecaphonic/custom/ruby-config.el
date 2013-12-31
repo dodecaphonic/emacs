@@ -5,9 +5,7 @@
             (set (make-local-variable 'indent-tabs-mode) 'nil)
             (set (make-local-variable 'tab-width) 2)
             (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
-            (local-set-key (kbd "C-c C-c") 'xmp)
-            (local-set-key (kbd "C-j") 'newline)
-            (local-set-key (kbd "RET") 'electric-indent-just-newline)))
+            (local-set-key (kbd "C-c C-c") 'xmp)))
 
 (add-hook 'ruby-mode-hook 'ruby-tools-mode)
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)

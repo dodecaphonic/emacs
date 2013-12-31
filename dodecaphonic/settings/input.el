@@ -10,5 +10,6 @@
 (global-set-key [(meta shift up)] 'move-line-up)
 (global-set-key [(meta shift down)] 'move-line-down)
 
+(electric-indent-mode -1)
 (setq mouse-yank-at-point t)
 (setq mac-command-modifier 'meta)
