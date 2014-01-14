@@ -1,7 +1,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-(load-library "iso-transl")
+(require 'iso-transl)
 
 (setq transient-mark-mode t)
 (global-set-key "\C-x\C-m" 'execute-extended-command)
