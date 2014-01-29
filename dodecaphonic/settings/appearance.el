@@ -1,5 +1,6 @@
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(setq menu-bar-mode nil)
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+  (when (fboundp mode) (funcall mode -1)))
+
 (setq frame-title-format "%b - emacs")
 (load-theme 'sanityinc-tomorrow-blue t)
 
