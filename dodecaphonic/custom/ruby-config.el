@@ -9,7 +9,6 @@
 
 (add-hook 'ruby-mode-hook 'ruby-tools-mode)
 (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
-(add-hook 'ruby-mode-hook 'robe-mode)
 
 (custom-set-variables
  '(ruby-refactor-add-parens t)
