@@ -2,6 +2,8 @@
 ;; From: http://emacsredux.com/blog/2013/05/31/highlight-lines-that-exceed-a-certain-length-limit/
 (require 'whitespace)
 
+(which-function-mode)
+
 (defun programming-custom()
   "Defaults for all children of prog-mode."
   (setq whitespace-line-column 80) ;; limit line length

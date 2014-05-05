@@ -14,6 +14,11 @@
                                         (indent-according-to-mode)))
 (global-set-key [(meta shift up)] 'move-line-up)
 (global-set-key [(meta shift down)] 'move-line-down)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-word-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-word-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-words-like-this)
+(global-set-key (kbd "C-c C-{") 'mc/edit-lines)
 
 (electric-indent-mode -1)
 (setq mouse-yank-at-point t)
