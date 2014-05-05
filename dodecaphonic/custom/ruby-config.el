@@ -18,4 +18,4 @@
   "Run an inferior Ruby process")
 
 (require 'chruby)
-(chruby "ruby-2.1.0")
+(chruby "ruby-2.1.1")
