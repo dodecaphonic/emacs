@@ -13,7 +13,8 @@
     scala-mode2 slime yasnippet color-theme-sanityinc-tomorrow gist org
     ack-and-a-half projectile htmlize fill-column-indicator multi-term
     ruby-refactor smart-tabs-mode scss-mode web-mode grizzl js2-mode ensime
-    smartparens ruby-tools go-mode multiple-cursors flycheck rubocop)
+    smartparens ruby-tools go-mode multiple-cursors flycheck rubocop
+    helm helm-ack helm-dash helm-git-grep helm-rails helm-projectile)
  "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()
