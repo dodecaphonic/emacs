@@ -19,7 +19,10 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-word-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-words-like-this)
 (global-set-key (kbd "C-c C-{") 'mc/edit-lines)
+(global-set-key (kbd "<RET>") 'electric-indent-just-newline)
+(global-set-key (kbd "C-j") 'newline)
 
-(electric-indent-mode -1)
+(electric-pair-mode t)
+(electric-indent-mode t)
 (setq mouse-yank-at-point t)
 (setq mac-command-modifier 'meta)

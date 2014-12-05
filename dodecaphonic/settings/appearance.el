@@ -9,7 +9,6 @@
 
 (global-hl-line-mode t)
 (show-paren-mode t)
-(electric-pair-mode t)
 (column-number-mode t)
 
 (set-frame-size-according-to-resolution)
@@ -18,5 +17,6 @@
 (when (and window-system (eq system-type 'darwin))
   ;; When started from Emacs.app or similar, ensure $PATH
   ;; is the same the user would see in Terminal.app
+  (setq ns-use-srgb-colorspace t)
   (set-exec-path-from-shell-PATH)
   (set-frame-font "Inconsolata-16"))
