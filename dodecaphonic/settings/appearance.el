@@ -2,7 +2,7 @@
   (when (fboundp mode) (funcall mode -1)))
 
 (setq frame-title-format "%b - emacs")
-(load-theme 'sanityinc-tomorrow-blue t)
+(load-theme 'hc-zenburn t)
 
 (global-linum-mode t) ;; Show line numbers
 (setq linum-format "%d ")
@@ -13,10 +13,9 @@
 
 (set-frame-size-according-to-resolution)
 
-(set-frame-font "Inconsolata-13")
+(set-frame-font "Fantasque Sans Mono-13")
 (when (and window-system (eq system-type 'darwin))
   ;; When started from Emacs.app or similar, ensure $PATH
   ;; is the same the user would see in Terminal.app
   (setq ns-use-srgb-colorspace t)
-  (set-exec-path-from-shell-PATH)
-  (set-frame-font "Inconsolata-16"))
+  (set-frame-font "Fantasque Sans Mono-16"))

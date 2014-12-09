@@ -14,7 +14,7 @@
     ack-and-a-half projectile htmlize fill-column-indicator multi-term
     ruby-refactor smart-tabs-mode scss-mode web-mode grizzl js2-mode ensime
     smartparens ruby-tools go-mode multiple-cursors flycheck rubocop
-    rust-mode flycheck-rust haskell-mode)
+    rust-mode flycheck-rust haskell-mode hc-zenburn-theme)
  "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()
