@@ -11,6 +11,8 @@
 (show-paren-mode t)
 (column-number-mode t)
 
+(nyan-mode t)
+
 (set-frame-size-according-to-resolution)
 
 (set-frame-font "Fantasque Sans Mono-13")
