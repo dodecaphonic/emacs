@@ -15,9 +15,9 @@
 
 (set-frame-size-according-to-resolution)
 
-(set-frame-font "Fantasque Sans Mono-13")
+(set-frame-font "Inconsolata-13")
 (when (and window-system (eq system-type 'darwin))
   ;; When started from Emacs.app or similar, ensure $PATH
   ;; is the same the user would see in Terminal.app
   (setq ns-use-srgb-colorspace t)
-  (set-frame-font "Fantasque Sans Mono-16"))
+  (set-frame-font "Inconsolata-16"))
