@@ -42,6 +42,7 @@
 ;; (require 'chruby)
 ;; (chruby "ruby-1.9.3")
 
+(require 'cl-lib)
 
 (defvar chruby-current-ruby-binary-path nil
   "reflects the path to the current 'ruby' executable.
@@ -61,7 +62,7 @@
 
 (defun chruby-rubies ()
   "Find all Rubies in various places, returns a list of directories."
-  (mapcan
+  (cl-mapcan
    'chruby-collect-rubies
    (list "/opt/rubies/"
          (concat (file-name-as-directory (getenv "HOME")) ".rubies")
@@ -70,9 +71,9 @@
 
 (defun chruby-find (name)
   "Find the given ruby in the list of rubies"
-  (first
+  (cl-first
    (delq nil
-         (mapcar
+         (cl-mapcar
           (lambda (ruby)
             (and (string-match name ruby) ruby))
           (chruby-rubies)))))
@@ -82,7 +83,7 @@
          (mapconcat 'identity chruby-current-ruby-binary-path ":"))
         (new-binaries-for-path (mapconcat 'identity new-binaries ":")))
     (if (and chruby-current-ruby-binary-path
-             (not (string= (first chruby-current-ruby-binary-path) "/bin")))
+             (not (string= (cl-first chruby-current-ruby-binary-path) "/bin")))
         (progn
           (setenv "PATH" (replace-regexp-in-string
                           (regexp-quote current-binaries-for-path)
@@ -106,36 +107,45 @@
     (setenv "GEM_PATH" "")
     (setenv "BUNDLE_PATH" "")))
 
+;;;###autoload
 (defun chruby (&optional name)
   "If name is given, activate the given Ruby. Else, return the currently
  activated Ruby"
   (if name
-      (chruby-activate name)
+      (progn
+        (setenv "RUBYOPT" "")
+        (if (string= "system" name)
+            (chruby-reset)
+          (chruby-activate name)))
     (chruby-current)))
+
+(defun chruby-reset ()
+  (chruby-change-path (list))
+  (chruby-set-gemhome nil nil))
 
 (defun chruby-activate (name)
   "Activate the given Ruby"
   (let ((ruby-root (chruby-find name)))
-    (setq chruby-current-ruby-name (chruby-util-basename ruby-root))
+    (when ruby-root
+      (setq chruby-current-ruby-name (chruby-util-basename ruby-root))
+      (chruby-change-path (list (concat ruby-root "/bin")))
 
-    (chruby-change-path (list (concat ruby-root "/bin")))
+      (let ((engine_version_gempath (chruby-query-version (concat ruby-root "/bin"))))
+        (let ((engine (cl-first engine_version_gempath))
+              (version (cl-second engine_version_gempath))
+              (gemroot (cl-third engine_version_gempath)))
+          (let ((gemhome (concat (getenv "HOME") "/.gem/" engine "/" version)))
+            (chruby-set-gemhome gemhome
+                                (concat gemhome ":" gemroot))
+            (chruby-change-path
+             (list (concat gemhome "/bin") (concat ruby-root "/bin")))))))))
 
-    (let ((engine_version_gempath (chruby-query-version)))
-      (let ((engine (first engine_version_gempath))
-            (version (second engine_version_gempath))
-            (gemroot (third engine_version_gempath)))
-        (let ((gemhome (concat (getenv "HOME") "/.gem/" engine "/" version)))
-          (chruby-set-gemhome gemhome
-                              (concat gemhome ":" gemroot))
-          (chruby-change-path
-           (list (concat gemhome "/bin") (concat ruby-root "/bin"))))))))
-
-(defun chruby-query-version ()
+(defun chruby-query-version (ruby-bin)
   "Shell out to Ruby to find out the current engine (ruby, jruby, etc), the
 ruby version, and the gem path"
   (split-string
    (shell-command-to-string
-    "ruby -rubygems -e 'print [(defined?(RUBY_ENGINE) ? RUBY_ENGINE : %[ruby]), (RUBY_VERSION), (Gem.default_dir.inspect)].join(%[##])'") "##"))
+    (concat ruby-bin "/ruby -rubygems -e 'print [(defined?(RUBY_ENGINE) ? RUBY_ENGINE : %[ruby]), (RUBY_VERSION), (Gem.default_dir.inspect)].join(%[##])'")) "##"))
 
 (defun chruby-util-basename (path)
   (file-name-nondirectory (directory-file-name path)))
@@ -144,4 +154,37 @@ ruby version, and the gem path"
   "Return the currently activated Ruby name"
   chruby-current-ruby-name)
 
+;; Pretty much borrowed from `rbenv.el`
+
+(defun chruby-use (ruby-version)
+  "choose what ruby you want to activate"
+  (interactive
+   (let ((picked-ruby (read-string "Ruby version: ")))
+     (list picked-ruby)))
+  (if (chruby-activate ruby-version)
+      (message (concat "[chruby] using " ruby-version))
+    (message (concat "[chruby] couldn't find " ruby-version))))
+
+(defun chruby-use-corresponding ()
+  "search for .ruby-version and activate the corresponding ruby"
+  (interactive)
+  (let ((version-file-path (chruby--locate-file ".ruby-version")))
+    (if version-file-path (chruby-use (chruby--read-version-from-file version-file-path))
+      (message "[chruby] could not locate .ruby-version"))))
+
+(defun chruby--replace-trailing-whitespace (text)
+  (replace-regexp-in-string "[[:space:]]\\'" "" text))
+
+(defun chruby--read-version-from-file (path)
+  (with-temp-buffer
+    (insert-file-contents path)
+    (chruby--replace-trailing-whitespace (buffer-substring-no-properties (point-min) (point-max)))))
+
+(defun chruby--locate-file (file-name)
+  "searches the directory tree for an given file. Returns nil if the file was not found."
+  (let ((directory (locate-dominating-file default-directory file-name)))
+    (when directory (concat directory file-name))))
+
 (provide 'chruby)
+
+;;; chruby.el ends here
