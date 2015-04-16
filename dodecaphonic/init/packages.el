@@ -15,7 +15,7 @@
     ruby-refactor smart-tabs-mode scss-mode web-mode grizzl js2-mode ensime
     smartparens ruby-tools go-mode multiple-cursors flycheck rubocop
     rust-mode flycheck-rust haskell-mode hc-zenburn-theme nyan-mode
-    purescript psci)
+    purescript-mode psci)
  "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()
