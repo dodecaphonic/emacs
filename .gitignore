@@ -8,3 +8,7 @@ projectile*
 var/
 bookmarks
 session.*
+.DS_Store
+ac-comphist.dat
+ensime/
+ido.last
