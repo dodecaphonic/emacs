@@ -3,7 +3,8 @@
 (defun dodecaphonic-js2-mode-hook ()
   (setq js2-basic-offset 2)
   (setq js2-global-externs '("module" "require" "console" "JSON" "$" "_"))
-  (tern-mode t))
+  (tern-mode t)
+  (company-mode t))
 
 (defun dodecaphonic-coffee-mode-hook ()
   "coffee-mode-hook"
@@ -12,11 +13,10 @@
   (setq coffee-debug-mode t)
   (local-set-key "\C-c\C-b" 'coffee-compile-buffer))
 
-(with-eval-after-load "company"
+(with-eval-after-load 'company
   (require 'company-tern)
-  '(progn
-     (require 'tern-auto-complete)
-     (add-to-list 'company-backends 'company-tern)))
+  (require 'tern-auto-complete)
+  (add-to-list 'company-backends 'company-tern))
 
 (add-hook 'coffee-mode-hook 'dodecaphonic-coffee-mode-hook)
 
@@ -29,3 +29,6 @@
 
 ;; Use js-mode for JSON, as js2-mode is very demanding
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+
+(require 'nvm)
+(nvm-use "v4.0.0")

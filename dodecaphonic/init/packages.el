@@ -13,7 +13,7 @@
     smartparens ruby-tools go-mode multiple-cursors flycheck rubocop
     rust-mode flycheck-rust haskell-mode nyan-mode purescript-mode psci
     elm-mode enh-ruby-mode yard-mode robe tern tern-auto-complete
-    js2-refactor company-tern)
+    js2-refactor company-tern nvm)
  "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()
