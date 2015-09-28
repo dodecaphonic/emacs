@@ -2,7 +2,6 @@
   (when (fboundp mode) (funcall mode -1)))
 
 (setq frame-title-format "%b - emacs")
-(load-theme 'hc-zenburn t)
 
 (global-linum-mode t) ;; Show line numbers
 (setq linum-format "%d ")
