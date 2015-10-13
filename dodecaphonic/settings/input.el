@@ -21,6 +21,7 @@
 (global-set-key (kbd "C-c C-{") 'mc/edit-lines)
 (global-set-key (kbd "<RET>") 'electric-indent-just-newline)
 (global-set-key (kbd "C-j") 'newline)
+(global-set-key (kbd "C-x a r") 'align-regexp)
 
 (electric-pair-mode t)
 (electric-indent-mode t)
