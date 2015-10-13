@@ -1,12 +1,15 @@
 (require 'yaml-mode)
 
-(add-hook 'enh-ruby-mode-hook
-          (lambda()
-            (set (make-local-variable 'indent-tabs-mode) 'nil)
-            (set (make-local-variable 'tab-width) 2)
-            (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
-            (local-set-key (kbd "C-c C-c") 'xmp)))
+(defun dodecaphonic-ruby-mode-hook ()
+  (set (make-local-variable 'indent-tabs-mode) 'nil)
+  (set (make-local-variable 'tab-width) 2)
+  (setq enh-ruby-bounce-deep-indent t)
+  (setq enh-ruby-hanging-brace-indent-level 2)
+  (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
+  (local-set-key (kbd "C-c C-c") 'xmp)
+  (local-set-key (kbd "C-c C-d") 'duplicate-current-line))
 
+(add-hook 'enh-ruby-mode-hook 'dodecaphonic-ruby-mode-hook)
 
 (add-hook 'robe-mode-hook 'ac-robe-setup)
 
