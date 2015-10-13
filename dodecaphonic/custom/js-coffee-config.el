@@ -20,7 +20,11 @@
 
 (add-hook 'coffee-mode-hook 'dodecaphonic-coffee-mode-hook)
 
+(require 'js2-refactor)
+(js2r-add-keybindings-with-prefix "C-c t")
+
 (autoload 'js2-mode "js2-mode" nil t)
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
 (add-hook 'js2-mode-hook 'dodecaphonic-js2-mode-hook)
 
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -31,4 +35,4 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
 (require 'nvm)
-(nvm-use "v4.0.0")
+(nvm-use "v4.1.0")
