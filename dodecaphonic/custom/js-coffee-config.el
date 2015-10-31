@@ -33,6 +33,3 @@
 
 ;; Use js-mode for JSON, as js2-mode is very demanding
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
-
-(require 'nvm)
-(nvm-use "v4.1.0")
