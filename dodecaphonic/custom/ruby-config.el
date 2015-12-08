@@ -11,8 +11,6 @@
 
 (add-hook 'enh-ruby-mode-hook 'dodecaphonic-ruby-mode-hook)
 
-(add-hook 'robe-mode-hook 'ac-robe-setup)
-
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
 (add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
 
@@ -20,7 +18,6 @@
 (add-hook 'enh-ruby-mode-hook 'ruby-refactor-mode-launch)
 (add-hook 'enh-ruby-mode-hook 'rubocop-mode)
 (add-hook 'enh-ruby-mode-hook 'flycheck-mode)
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
 (add-hook 'enh-ruby-mode-hook 'yard-mode)
 
 (custom-set-variables
