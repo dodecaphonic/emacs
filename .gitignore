@@ -12,3 +12,4 @@ session.*
 ac-comphist.dat
 ensime/
 ido.last
+.tern-port
