@@ -10,8 +10,8 @@
     scala-mode2 slime yasnippet color-theme-sanityinc-tomorrow org
     projectile htmlize smart-tabs-mode scss-mode web-mode grizzl ensime
     smartparens ruby-tools go-mode multiple-cursors flycheck rubocop rust-mode
-    flycheck-rust haskell-mode nyan-mode purescript-mode psci elm-mode
-    ruby-refactor enh-ruby-mode yard-mode robe js2-mode tern js-comint
+    flycheck-rust haskell-mode hindent nyan-mode purescript-mode psci elm-mode
+    ruby-refactor enh-ruby-mode yard-mode js2-mode tern js-comint
     tern-auto-complete js2-refactor company-tern psc-ide auto-complete)
  "A list of packages to ensure are installed at launch.")
 
