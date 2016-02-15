@@ -5,7 +5,7 @@
 (package-initialize)
 
 (defvar dodecaphonic/required-packages
-  '(clojure-mode coffee-mode expand-region gist inf-ruby ruby-mode
+  '(clojure-mode expand-region gist inf-ruby ruby-mode
     magit markdown-mode yaml-mode rspec-mode flx-ido rainbow-mode json
     scala-mode2 slime yasnippet color-theme-sanityinc-tomorrow org
     projectile htmlize smart-tabs-mode scss-mode web-mode grizzl ensime
