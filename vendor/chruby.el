@@ -11,7 +11,7 @@
 
 ;; This file is NOT part of GNU Emacs.
 
- ;;; License:
+;;; License:
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -28,11 +28,11 @@
 ;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
 ;; Boston, MA 02110-1301, USA.
 
- ;;; Attribution :
+;;; Attribution :
 
 ;; The chruby-change-path function was taken from rvm.el by Yves Senn
 
- ;;; Commentary:
+;;; Commentary:
 
 ;; The chruby function functions like the shell command, pass it the
 ;; name of a Ruby such as 'ruby-1.9.3' or 'jruby-1.7.2'.
@@ -41,6 +41,8 @@
 ;;
 ;; (require 'chruby)
 ;; (chruby "ruby-1.9.3")
+
+;;; Code:
 
 (require 'cl-lib)
 
@@ -145,7 +147,7 @@
 ruby version, and the gem path"
   (split-string
    (shell-command-to-string
-    (concat ruby-bin "/ruby -rubygems -e 'print [(defined?(RUBY_ENGINE) ? RUBY_ENGINE : %[ruby]), (RUBY_VERSION), (Gem.default_dir.inspect)].join(%[##])'")) "##"))
+    (concat ruby-bin "/ruby -rubygems -e 'print [(defined?(RUBY_ENGINE) ? RUBY_ENGINE : %[ruby]), (RUBY_VERSION), (Gem.default_dir.inspect)].join(%[##])' 2>/dev/null")) "##"))
 
 (defun chruby-util-basename (path)
   (file-name-nondirectory (directory-file-name path)))
