@@ -1,18 +1,25 @@
 (require 'package)
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 (package-initialize)
 
 (defvar dodecaphonic/required-packages
-  '(clojure-mode expand-region gist inf-ruby ruby-mode
-    magit markdown-mode yaml-mode rspec-mode flx-ido rainbow-mode json
-    scala-mode2 slime yasnippet color-theme-sanityinc-tomorrow org
-    projectile htmlize smart-tabs-mode scss-mode web-mode grizzl ensime
-    smartparens ruby-tools go-mode multiple-cursors flycheck rubocop rust-mode
-    flycheck-rust haskell-mode hindent nyan-mode purescript-mode psci elm-mode
-    ruby-refactor yard-mode js2-mode tern js-comint
-    tern-auto-complete js2-refactor company-tern psc-ide auto-complete)
+  '(flx-ido json expand-region gist yasnippet rainbow-mode
+    magit markdown-mode slime org projectile
+    htmlize smart-tabs-mode scss-mode web-mode grizzl smartparens
+    multiple-cursors flycheck nyan-mode auto-complete
+    clojure-mode
+    ruby-mode inf-ruby rspec-mode ruby-tools rubocop ruby-refactor
+    yard-mode yaml-mode
+    scala-mode2 ensime
+    js2-mode tern js-comint js2-refactor company-tern tern-auto-complete
+    go-mode
+    rust-mode flycheck-rust
+    haskell-mode hindent
+    purescript-mode psci psc-ide
+    elm-mode)
  "A list of packages to ensure are installed at launch.")
 
 (defun dodecaphonic/bootstrap-required-packages-installed-p ()
