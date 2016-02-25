@@ -18,7 +18,7 @@
     go-mode
     rust-mode flycheck-rust
     haskell-mode hindent
-    purescript-mode psci psc-ide
+    purescript-mode psci
     elm-mode)
  "A list of packages to ensure are installed at launch.")
 
