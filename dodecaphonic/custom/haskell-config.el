@@ -9,8 +9,7 @@
   (local-set-key (kbd "C-c C-i") 'haskell-process-do-info)
   (local-set-key (kbd "C-c C-c") 'haskell-process-cabal-build)
   (local-set-key (kbd "C-c C-k") 'haskell-interactive-mode-clear)
-  (local-set-key (kbd "C-c c") 'haskell-process-cabal)
-  (local-set-key (kbd "SPC") 'haskell-mode-contextual-space))
+  (local-set-key (kbd "C-c c") 'haskell-process-cabal))
 
 (add-hook 'haskell-mode-hook 'dodecaphonic-haskell-mode-hook)
 
@@ -18,5 +17,3 @@
 (require 'haskell-process)
 
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-
-(add-hook 'haskell-mode-hook #'hindent-mode)
