@@ -8,7 +8,7 @@
 (defvar dodecaphonic/required-packages
   '(flx-ido json expand-region gist yasnippet rainbow-mode
     magit markdown-mode slime org projectile
-    helm helm-projectile
+    helm helm-projectile helm-dash
     htmlize smart-tabs-mode scss-mode web-mode grizzl smartparens
     multiple-cursors flycheck nyan-mode auto-complete
     clojure-mode
