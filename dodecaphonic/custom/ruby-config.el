@@ -1,29 +1,41 @@
-(require 'yaml-mode)
+(use-package yaml-mode)
 
-(defun dodecaphonic-ruby-mode-hook ()
+(use-package ruby-mode
+  :config
   (set (make-local-variable 'indent-tabs-mode) 'nil)
   (set (make-local-variable 'tab-width) 2)
-  (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
-  (local-set-key (kbd "C-c C-c") 'xmp)
-  (local-set-key (kbd "C-c C-d") 'duplicate-current-line))
+  (add-hook 'ruby-mode-hook 'flycheck-mode)
+  (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+  (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
-(add-hook 'ruby-mode-hook 'dodecaphonic-ruby-mode-hook)
+  (autoload 'run-ruby "inf-ruby"
+    "Run an inferior Ruby process")
 
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
+  (use-package ruby-tools
+    :config
+    (add-hook 'ruby-mode-hook 'ruby-tools-mode))
 
-(add-hook 'ruby-mode-hook 'ruby-tools-mode)
-(add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch)
-(add-hook 'ruby-mode-hook 'rubocop-mode)
-(add-hook 'ruby-mode-hook 'flycheck-mode)
-(add-hook 'ruby-mode-hook 'yard-mode)
+  (use-package ruby-refactor
+    :config
+    (setq ruby-refactor-add-parens t)
+    (setq ruby-refactor-keymap-prefix (kbd "C-c t"))
+    (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch))
 
-(custom-set-variables
- '(ruby-refactor-add-parens t)
- '(ruby-refactor-keymap-prefix (kbd "C-c t")))
+  (use-package rubocop
+    :config
+    (add-hook 'ruby-mode-hook 'rubocop-mode))
 
-(autoload 'run-ruby "inf-ruby"
-  "Run an inferior Ruby process")
+  (use-package yard-mode
+    :config
+    (add-hook 'ruby-mode-hook 'yard-mode))
 
-(require 'chruby)
-(chruby "ruby-2.3.0")
+  (use-package chruby
+    :config
+    (chruby "ruby-2.3.0"))
+
+  (use-package rspec-mode)
+
+  :bind
+  ("C-c =" . dodecaphonic/align=)
+  ("C-c C-c" . xmp)
+  ("C-c C-d" . duplicate-current-line))

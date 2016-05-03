@@ -1,3 +1,14 @@
+(require 'cl)
+
+(defun online? ()
+  (if (and (functionp 'network-interface-list)
+           (network-interface-list))
+      (some (lambda (iface) (unless (equal "lo" (car iface))
+                              (member 'up (first (last (network-interface-info
+                                        (car iface)))))))
+            (network-interface-list))
+    t))
+
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -5,15 +16,24 @@
 
 (package-initialize)
 
+(when (online?)
+  (unless package-archive-contents (package-refresh-contents)))
+
+(when (not (package-installed-p 'paradox))
+  (package-install 'paradox))
+
+(when (not (package-installed-p 'use-package))
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 (defvar dodecaphonic/required-packages
-  '(flx-ido json expand-region gist yasnippet rainbow-mode
-    magit markdown-mode slime org projectile
-    helm helm-projectile helm-dash
+  '(flx json expand-region gist yasnippet rainbow-mode
+    magit markdown-mode slime org
     htmlize smart-tabs-mode scss-mode web-mode grizzl smartparens
     multiple-cursors flycheck nyan-mode auto-complete
     clojure-mode
-    ruby-mode inf-ruby rspec-mode ruby-tools rubocop ruby-refactor
-    yard-mode yaml-mode
     scala-mode2 ensime
     js2-mode tern js-comint js2-refactor company-tern tern-auto-complete
     go-mode
