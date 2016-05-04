@@ -16,9 +16,11 @@
     (add-hook 'ruby-mode-hook 'ruby-tools-mode))
 
   (use-package ruby-refactor
+    :init
+    (custom-set-variables
+     '(ruby-refactor-add-parens t)
+     '(ruby-refactor-keymap-prefix (kbd "C-c t")))
     :config
-    (setq ruby-refactor-add-parens t)
-    (setq ruby-refactor-keymap-prefix (kbd "C-c t"))
     (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch))
 
   (use-package rubocop

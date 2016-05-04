@@ -31,12 +31,9 @@
 (defvar dodecaphonic/required-packages
   '(flx json expand-region gist yasnippet rainbow-mode
     magit markdown-mode slime org
-    htmlize smart-tabs-mode scss-mode web-mode grizzl smartparens
+    htmlize smart-tabs-mode grizzl smartparens
     multiple-cursors flycheck nyan-mode auto-complete
-    clojure-mode
-    scala-mode2 ensime
     js2-mode tern js-comint js2-refactor company-tern tern-auto-complete
-    go-mode
     rust-mode flycheck-rust
     haskell-mode hindent
     purescript-mode psci

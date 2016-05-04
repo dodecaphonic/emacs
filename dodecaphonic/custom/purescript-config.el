@@ -1,4 +1,3 @@
-(defun dodecaphonic-purescript-mode-hook ()
+(use-package purescript
+  :config
   (turn-on-purescript-indentation))
-
-(add-hook 'purescript-mode-hook 'dodecaphonic-purescript-mode-hook)
