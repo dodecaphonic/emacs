@@ -7,6 +7,10 @@
   :config
   (load-theme 'sanityinc-tomorrow-night))
 
+(use-package nyan-mode
+  :commands nyan-mode
+  :config (nyan-mode t))
+
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
@@ -18,8 +22,6 @@
 (global-hl-line-mode t)
 (show-paren-mode t)
 (column-number-mode t)
-
-(nyan-mode t)
 
 (set-frame-size-according-to-resolution)
 

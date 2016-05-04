@@ -19,3 +19,19 @@
 
 (add-hook 'prog-mode-hook 'programming-custom)
 (show-smartparens-global-mode +1)
+
+(use-package flycheck)
+
+(use-package smartparens)
+
+(use-package smart-tabs-mode)
+
+(use-package gist)
+
+(use-package yasnippet)
+
+(use-package expand-region)
+
+(use-package json)
+
+(provide 'programming-config)

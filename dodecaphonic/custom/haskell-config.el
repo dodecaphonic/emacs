@@ -1,19 +1,20 @@
-(defun dodecaphonic-haskell-mode-hook ()
+(use-package haskell-mode
+  :config
+  (require 'haskell-interactive-mode)
+  (require 'haskell-process)
+
   (haskell-indentation-mode t)
-  (local-set-key (kbd "C-,") 'haskell-move-nested-left)
-  (local-set-key (kbd "C-.") 'haskell-move-nested-right)
-  (local-set-key [f8] 'haskell-navigate-imports)
-  (local-set-key (kbd "C-c C-l") 'haskell-process-load-or-reload)
-  (local-set-key (kbd "C-`") 'haskell-interactive-bring)
-  (local-set-key (kbd "C-c C-t") 'haskell-process-do-type)
-  (local-set-key (kbd "C-c C-i") 'haskell-process-do-info)
-  (local-set-key (kbd "C-c C-c") 'haskell-process-cabal-build)
-  (local-set-key (kbd "C-c C-k") 'haskell-interactive-mode-clear)
-  (local-set-key (kbd "C-c c") 'haskell-process-cabal))
+  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+  :bind
+  ("C-," . haskell-move-nested-left)
+  ("C-." . haskell-move-nested-right)
+  ("<f8>" . haskell-navigate-imports)
+  ("C-c C-l" . haskell-process-load-or-reload)
+  ("C-`" . haskell-interactive-bring)
+  ("C-c C-t" . haskell-process-do-type)
+  ("C-c C-i" . haskell-process-do-info)
+  ("C-c C-c" . haskell-process-cabal-build)
+  ("C-c C-k" . haskell-interactive-mode-clear)
+  ("C-c c" . haskell-process-cabal))
 
-(add-hook 'haskell-mode-hook 'dodecaphonic-haskell-mode-hook)
-
-(require 'haskell-interactive-mode)
-(require 'haskell-process)
-
-(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(provide 'haskell-config)

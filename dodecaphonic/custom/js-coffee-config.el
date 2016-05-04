@@ -1,9 +1,9 @@
 (use-package js2-mode
   :commands js2-mode
-  :init
-  (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-  (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
-  (add-to-list 'auto-mode-alist '("\\.es6$" . js2-mode))
+  :mode
+  ("\\.js$" . js2-mode)
+  ("\\.jsx$" . js2-mode)
+  ("\\.es6$" . js2-mode)
   :config
   (use-package js2-refactor
     :commands (js2r-add-keybindings-with-prefix)
@@ -13,8 +13,7 @@
 
   (setq js2-basic-offset 2)
   (setq js2-global-externs '("module" "require" "console" "JSON" "$" "_"))
-  (setq inferior-js-program-command "node --interactive")
-  (company-mode t))
+  (setq inferior-js-program-command "node --interactive"))
 
 (use-package tern
   :commands tern-mode
@@ -27,3 +26,5 @@
 
 ;; Use js-mode for JSON, as js2-mode is very demanding
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+
+(provide 'js-config)

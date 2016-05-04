@@ -9,3 +9,5 @@
   (smart-tabs-advice c-indent-region c-basic-offset))
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+(provide 'c-cpp-config)

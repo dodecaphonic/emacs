@@ -10,8 +10,7 @@
     t))
 
 (require 'package)
-
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 (package-initialize)
@@ -27,30 +26,3 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
-
-(defvar dodecaphonic/required-packages
-  '(flx json expand-region gist yasnippet rainbow-mode
-    magit markdown-mode slime org
-    htmlize smart-tabs-mode grizzl smartparens
-    multiple-cursors flycheck nyan-mode auto-complete
-    js2-mode tern js-comint js2-refactor company-tern tern-auto-complete
-    rust-mode flycheck-rust
-    haskell-mode hindent
-    purescript-mode psci
-    elm-mode)
- "A list of packages to ensure are installed at launch.")
-
-(defun dodecaphonic/bootstrap-required-packages-installed-p ()
-  (loop for p in dodecaphonic/required-packages
-        when (not (package-installed-p p)) do (return nil)
-        finally (return t)))
-
-(unless (dodecaphonic/bootstrap-required-packages-installed-p)
-  ;; check for new packages (package versions)
-  (message "%s" "Refreshing its package database...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  ;; install the missing packages
-  (dolist (p dodecaphonic/required-packages)
-    (when (not (package-installed-p p))
-      (package-install p))))

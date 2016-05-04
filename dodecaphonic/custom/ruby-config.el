@@ -41,3 +41,5 @@
   ("C-c =" . dodecaphonic/align=)
   ("C-c C-c" . xmp)
   ("C-c C-d" . duplicate-current-line))
+
+(provide 'ruby-config)

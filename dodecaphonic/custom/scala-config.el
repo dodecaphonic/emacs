@@ -1,4 +1,7 @@
-(use-package scala-mode2)
-(use-package ensime
+(use-package scala-mode2
   :config
-  (add-hook 'scala-mode-hook 'ensime-scala-mode-hook))
+  (use-package ensime
+    :config
+    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
+
+(provide 'scala-config)

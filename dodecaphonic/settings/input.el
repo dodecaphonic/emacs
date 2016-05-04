@@ -27,3 +27,10 @@
 (electric-indent-mode t)
 (setq mouse-yank-at-point t)
 (setq mac-command-modifier 'meta)
+
+(use-package company
+  :commands company-mode
+  :config
+  (company-mode t))
+
+(provide 'input)
