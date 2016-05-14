@@ -17,8 +17,9 @@
 
 (use-package tern
   :commands tern-mode
-  :config
+  :init
   (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
+  :config
   (with-eval-after-load 'company
     (require 'company-tern)
     (require 'tern-auto-complete)
