@@ -20,10 +20,14 @@
   :init
   (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
   :config
-  (with-eval-after-load 'company
-    (require 'company-tern)
-    (require 'tern-auto-complete)
-    (add-to-list 'company-backends 'company-tern)))
+  (use-package company-tern
+    :config
+    (use-package tern-auto-complete
+      :config
+      (with-eval-after-load 'company
+        (require 'company-tern)
+        (require 'tern-auto-complete)
+        (add-to-list 'company-backends 'company-tern)))))
 
 ;; Use js-mode for JSON, as js2-mode is very demanding
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
