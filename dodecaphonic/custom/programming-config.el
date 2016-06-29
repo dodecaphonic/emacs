@@ -18,11 +18,12 @@
                  (delete-trailing-whitespace)))))
 
 (add-hook 'prog-mode-hook 'programming-custom)
-(show-smartparens-global-mode +1)
+
+(use-package smartparens
+  :config
+  (show-smartparens-global-mode t))
 
 (use-package flycheck)
-
-(use-package smartparens)
 
 (use-package smart-tabs-mode)
 

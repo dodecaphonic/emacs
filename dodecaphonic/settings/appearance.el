@@ -8,7 +8,6 @@
   (load-theme 'sanityinc-tomorrow-night))
 
 (use-package nyan-mode
-  :commands nyan-mode
   :config (nyan-mode t))
 
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
