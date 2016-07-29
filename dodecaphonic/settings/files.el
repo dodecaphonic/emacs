@@ -1,5 +1,7 @@
 (setq backup-directory-alist
-      (list (cons "." (expand-file-name "backup" (concat emacs-root ".emacs.d")))))
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (setq-default indent-tabs-mode nil)
 (setq require-final-newline t)
