@@ -1,5 +1,9 @@
 (use-package haskell-mode
   :config
+  (use-package intero
+    :config
+    (add-hook 'haskell-mode-hook 'intero-mode))
+
   (require 'haskell-interactive-mode)
   (require 'haskell-process)
 
