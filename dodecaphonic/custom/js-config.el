@@ -29,7 +29,4 @@
         (require 'tern-auto-complete)
         (add-to-list 'company-backends 'company-tern)))))
 
-;; Use js-mode for JSON, as js2-mode is very demanding
-(add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
-
 (provide 'js-config)

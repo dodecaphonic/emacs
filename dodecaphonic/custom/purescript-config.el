@@ -8,9 +8,7 @@
     :config
     (defun dodecaphonic-purescript-mode-hook ()
       (psc-ide-mode t)
-      (company-mode t)
       (flycheck-mode t))
-
     (add-hook 'purescript-mode-hook 'dodecaphonic-purescript-mode-hook)))
 
 (provide 'purescript-config)

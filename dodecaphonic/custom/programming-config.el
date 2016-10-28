@@ -23,7 +23,12 @@
   :config
   (show-smartparens-global-mode t))
 
-(use-package flycheck)
+(use-package flycheck
+  :config
+  (use-package flycheck-pos-tip
+    :config
+    (with-eval-after-load 'flycheck
+      (flycheck-pos-tip-mode))))
 
 (use-package smart-tabs-mode)
 

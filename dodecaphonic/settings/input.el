@@ -31,6 +31,6 @@
 (use-package company
   :commands company-mode
   :config
-  (company-mode t))
+  (add-hook 'after-init-hook 'global-company-mode))
 
 (provide 'input)
