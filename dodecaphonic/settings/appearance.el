@@ -25,9 +25,9 @@
 (set-frame-size-according-to-resolution)
 
 (when (window-system)
-  (set-default-font "Fira Code"))
+  (set-default-font "Fira Mono"))
 
-(set-frame-font "Fira Code-13")
+(set-frame-font "Fira Mono-13")
 (when (and window-system (eq system-type 'darwin))
   (setq ns-use-srgb-colorspace t)
   (set-frame-font "Fira Code-16")
