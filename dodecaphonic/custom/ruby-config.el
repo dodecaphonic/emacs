@@ -33,7 +33,7 @@
 
   (use-package chruby
     :config
-    (chruby "ruby-2.3.1"))
+    (chruby "ruby-2.3.3"))
 
   (use-package rspec-mode)
 
