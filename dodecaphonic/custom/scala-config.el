@@ -1,4 +1,4 @@
-(use-package scala-mode2
+(use-package scala-mode
   :config
   (use-package ensime
     :config
