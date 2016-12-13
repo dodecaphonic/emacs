@@ -1,7 +1,7 @@
 (use-package scala-mode
   :config
   (use-package ensime
-    :config
-    (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
+    :pin melpa-stable
+    :ensure t))
 
 (provide 'scala-config)
