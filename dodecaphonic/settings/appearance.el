@@ -10,6 +10,10 @@
 (use-package nyan-mode
   :config (nyan-mode t))
 
+(use-package powerline
+  :config
+  (powerline-default-theme))
+
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
