@@ -1,7 +1,5 @@
 (use-package markdown-mode)
 
-(use-package org
-  :config
-  (use-package ox-reveal))
+(use-package org)
 
 (provide 'writing-config)
