@@ -1,6 +1,11 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+(when (eq system-type 'darwin)
+  (setenv "LANG" "pt_BR.UTF-8")
+  (setenv "LC_ALL" "pt_BR.UTF-8"))
+
 (require 'iso-transl)
 
 (setq transient-mark-mode t)
