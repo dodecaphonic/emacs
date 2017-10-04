@@ -5,9 +5,10 @@
     (defun dodecaphonic-tide-setup ()
       (tide-setup)
       (flycheck-mode t)
+      (setq typescript-indent-level 2)
       (setq flycheck-check-syntax-automatically '(save mode-enabled))
       (eldoc-mode t))
-
+    (add-hook 'before-save-hook 'tide-format-before-save)
     (add-hook 'typescript-mode-hook #'dodecaphonic-tide-setup)))
 
 (with-eval-after-load "web-config"

@@ -29,4 +29,6 @@
         (require 'tern-auto-complete)
         (add-to-list 'company-backends 'company-tern)))))
 
+(use-package indium)
+
 (provide 'js-config)

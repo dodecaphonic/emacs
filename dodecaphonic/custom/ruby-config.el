@@ -36,10 +36,10 @@
     (chruby "ruby-2.4.1"))
 
   (use-package rspec-mode)
+  (use-package haml-mode)
 
   :bind
   ("C-c =" . dodecaphonic/align=)
-  ("C-c C-c" . xmp)
   ("C-c C-d" . duplicate-current-line))
 
 (provide 'ruby-config)
