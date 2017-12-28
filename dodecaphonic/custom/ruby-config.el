@@ -33,7 +33,7 @@
 
   (use-package chruby
     :config
-    (chruby "ruby-2.4.1"))
+    (chruby "ruby-2.4.2"))
 
   (use-package rspec-mode)
   (use-package haml-mode)
