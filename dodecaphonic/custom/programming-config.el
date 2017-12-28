@@ -11,6 +11,7 @@
   (setq show-trailing-whitespace t)
   (local-set-key (kbd "C-c =") 'dodecaphonic/align=)
   (local-set-key (kbd "C-c /") 'comment-region)
+  (flycheck-mode t)
   (add-hook 'local-write-file-hooks
             '(lambda()
                (save-excursion
