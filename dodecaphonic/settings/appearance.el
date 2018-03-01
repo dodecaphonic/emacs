@@ -36,3 +36,5 @@
   (setq ns-use-srgb-colorspace t)
   (set-frame-font "Iosevka-18")
   (mac-auto-operator-composition-mode t))
+
+(fringe-mode '(20 . 0))
