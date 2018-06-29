@@ -7,6 +7,7 @@
   (require 'haskell-interactive-mode)
   (require 'haskell-process)
 
+  (setq haskell-stylish-on-save t)
   (haskell-indentation-mode t)
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
   :bind

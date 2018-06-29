@@ -4,6 +4,7 @@
   :config
   (set (make-local-variable 'indent-tabs-mode) 'nil)
   (set (make-local-variable 'tab-width) 2)
+  (setq ruby-insert-encoding-magic-comment nil)
   (add-hook 'ruby-mode-hook 'flycheck-mode)
   (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
   (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
@@ -33,7 +34,7 @@
 
   (use-package chruby
     :config
-    (chruby "ruby-2.4.2"))
+    (chruby "ruby-2.5.1"))
 
   (use-package rspec-mode)
   (use-package haml-mode)

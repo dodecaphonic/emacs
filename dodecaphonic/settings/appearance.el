@@ -1,40 +1,35 @@
-(use-package color-theme-sanityinc-tomorrow
+(use-package doom-themes
   :init
   (custom-set-variables
    '(custom-safe-themes
-   (quote
-    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default))))
+     (quote
+      ("9d9fda57c476672acd8c6efeb9dc801abea906634575ad2c7688d055878e69d6" default))))
   :config
-  (load-theme 'sanityinc-tomorrow-night))
+  (load-theme 'doom-one))
 
 (use-package nyan-mode
   :config (nyan-mode t))
 
-(use-package powerline
+(use-package spaceline
   :config
-  (powerline-center-theme))
+  (require 'spaceline-config)
+  (spaceline-spacemacs-theme))
 
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
 (setq frame-title-format "%b - emacs")
 
-(global-linum-mode t) ;; Show line numbers
-(setq linum-format "%d ")
+(setq display-line-numbers t)
 
 (global-hl-line-mode t)
 (show-paren-mode t)
 (column-number-mode t)
 
-(set-frame-size-according-to-resolution)
-
 (when (window-system)
-  (set-default-font "Iosevka"))
+  (set-frame-font "Iosevka"))
 
 (set-frame-font "Iosevka-14")
-(when (and window-system (eq system-type 'darwin))
-  (setq ns-use-srgb-colorspace t)
-  (set-frame-font "Iosevka-18")
-  (mac-auto-operator-composition-mode t))
 
-(fringe-mode '(20 . 0))
+(provide 'appearance)
+;;; appearance.el ends here
