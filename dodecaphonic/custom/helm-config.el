@@ -7,6 +7,7 @@
   (with-eval-after-load "projectile-config"
     (use-package helm-projectile
       :bind
+      ("C-c p h" . helm-projectile)
       ("C-c p f" . helm-projectile-find-file)
       ("C-c p a" . helm-projectile-find-other-file)
       :config

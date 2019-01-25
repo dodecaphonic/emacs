@@ -3,7 +3,7 @@
   (custom-set-variables
    '(custom-safe-themes
      (quote
-      ("9d9fda57c476672acd8c6efeb9dc801abea906634575ad2c7688d055878e69d6" default))))
+      ("6b2636879127bf6124ce541b1b2824800afc49c6ccd65439d6eb987dbf200c36" default))))
   :config
   (load-theme 'doom-one))
 

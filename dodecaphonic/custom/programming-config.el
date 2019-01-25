@@ -21,6 +21,10 @@
 
 (add-hook 'prog-mode-hook 'programming-custom)
 
+(use-package rainbow-delimiters
+  :config
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
 (use-package smartparens
   :config
   (show-smartparens-global-mode t))
@@ -30,7 +34,8 @@
   (use-package flycheck-pos-tip
     :config
     (with-eval-after-load 'flycheck
-      (flycheck-pos-tip-mode))))
+      (flycheck-pos-tip-mode)
+      (setq flycheck-check-syntax-automatically '(mode-enabled save)))))
 
 (use-package smart-tabs-mode)
 

@@ -1,7 +1,5 @@
 (use-package magit
   :commands magit-status
-  :bind ("C-x g" . magit-status)
-  :custom
-  (setq magit-revision-show-gravatars '("^Author:     " . "^Commit:     ")))
+  :bind ("C-x g" . magit-status))
 
 (provide 'magit-config)

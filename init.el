@@ -30,18 +30,14 @@
 (load-directory (concat emacs-root "dodecaphonic/commands"))
 (load-directory (concat emacs-root "dodecaphonic/custom"))
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("9d9fda57c476672acd8c6efeb9dc801abea906634575ad2c7688d055878e69d6" default)))
  '(package-selected-packages
    (quote
-    (prettier-js add-node-modules-path go-mode telephone-line haml-mode olivetti writeroom-mode csv-mode org ox-reveal ensime scala-mode flycheck-flow company-flow scala-mode2 yard-mode yaml-mode use-package tern-auto-complete smartparens smart-tabs-mode scss-mode rust-mode ruby-tools ruby-refactor rubocop rspec-mode rainbow-mode purescript-mode paradox nyan-mode markdown-mode helm-flx gist flycheck-rust expand-region elm-mode company-tern color-theme-sanityinc-tomorrow chruby)))
+    (rainbow-delimiters nix-mode darkroom helm-projectile psc-ide prettier-js add-node-modules-path go-mode telephone-line haml-mode olivetti writeroom-mode csv-mode org ox-reveal ensime scala-mode flycheck-flow company-flow scala-mode2 yard-mode yaml-mode use-package tern-auto-complete smartparens smart-tabs-mode scss-mode rust-mode ruby-tools ruby-refactor rubocop rspec-mode rainbow-mode purescript-mode paradox nyan-mode markdown-mode helm-flx gist flycheck-rust expand-region elm-mode company-tern color-theme-sanityinc-tomorrow chruby)))
  '(ruby-refactor-add-parens t)
- '(ruby-refactor-keymap-prefix (kbd "C-c t")))
+ '(ruby-refactor-keymap-prefix (kbd "C-c t"))
+ '(safe-local-variable-values
+   (quote
+    ((dante-repl-command-line "nix-shell" "--run" "cabal new-repl")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
