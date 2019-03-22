@@ -31,11 +31,22 @@
 
 (use-package flycheck
   :config
-  (use-package flycheck-pos-tip
-    :config
-    (with-eval-after-load 'flycheck
-      (flycheck-pos-tip-mode)
-      (setq flycheck-check-syntax-automatically '(mode-enabled save)))))
+  (use-package flycheck-pos-tip)
+
+  (with-eval-after-load 'flycheck
+    (flycheck-pos-tip-mode)
+    (setq flycheck-check-syntax-automatically '(mode-enabled save)))
+
+  (setq flycheck-command-wrapper-function
+        (lambda (command)
+          (if (nix-current-sandbox)
+              (apply 'nix-shell-command (nix-current-sandbox) command))
+              command)
+        flycheck-executable-find
+        (lambda (cmd)
+          (if (nix-current-sandbox)
+              (nix-executable-find (nix-current-sandbox) cmd)
+            (flycheck-default-executable-find cmd)))))
 
 (use-package smart-tabs-mode)
 
