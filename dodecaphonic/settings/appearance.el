@@ -1,3 +1,7 @@
+;;; package --- Defines appearance-related things
+;;; Commentary:
+;;; Code:
+
 (use-package doom-themes
   :init
   (custom-set-variables
@@ -27,9 +31,8 @@
 (column-number-mode t)
 
 (when (window-system)
-  (set-frame-font "Iosevka"))
-
-(set-frame-font "Iosevka-14")
+  (set-frame-font "Iosevka-14:weight=book"))
 
 (provide 'appearance)
+
 ;;; appearance.el ends here
