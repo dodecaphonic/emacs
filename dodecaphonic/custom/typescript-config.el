@@ -1,14 +1,8 @@
-(defun nix-node-path ()
-  (if (nix-current-sandbox)
-      (nix-executable-find (nix-current-sandbox) "node")
-      "node"))
-
 (use-package typescript-mode
   :config
   (use-package tide
     :config
     (defun dodecaphonic-tide-setup ()
-      (setq tide-node-executable (nix-node-path))
       (tide-setup)
       (flycheck-mode t)
       (setq typescript-indent-level 2)
