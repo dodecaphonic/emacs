@@ -21,8 +21,6 @@
 
 (use-package tern
   :commands tern-mode
-  :init
-  (add-hook 'js2-mode-hook (lambda () (tern-mode t)))
   :config
   (use-package company-tern
     :config
@@ -34,9 +32,7 @@
         (add-to-list 'company-backends 'company-tern)))))
 
 (use-package prettier-js
-  :commands prettier-js-mode
-  :init
-  (add-hook 'js2-mode-hook #'prettier-js-mode))
+  :commands prettier-js-mode)
 
 (use-package indium)
 

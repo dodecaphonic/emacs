@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package kotlin-mode)
+(use-package kotlin-mode
+  :config
+  (add-hook 'kotlin-mode-hook #'lsp))
 
 (provide 'kotlin-config)
 

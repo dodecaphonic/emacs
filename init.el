@@ -39,7 +39,7 @@
     ("6b2636879127bf6124ce541b1b2824800afc49c6ccd65439d6eb987dbf200c36" default)))
  '(package-selected-packages
    (quote
-    (direnv kotlin-mode nix-sandbox rainbow-delimiters nix-mode darkroom helm-projectile psc-ide prettier-js add-node-modules-path go-mode telephone-line haml-mode olivetti writeroom-mode csv-mode org ox-reveal ensime scala-mode flycheck-flow company-flow scala-mode2 yard-mode yaml-mode use-package tern-auto-complete smartparens smart-tabs-mode scss-mode rust-mode ruby-tools ruby-refactor rubocop rspec-mode rainbow-mode purescript-mode paradox nyan-mode markdown-mode helm-flx gist flycheck-rust expand-region elm-mode company-tern color-theme-sanityinc-tomorrow chruby)))
+    (groovy-imports groovy-mode treemacs-magit treemacs lsp-java direnv kotlin-mode nix-sandbox rainbow-delimiters nix-mode darkroom helm-projectile psc-ide prettier-js add-node-modules-path go-mode telephone-line haml-mode olivetti writeroom-mode csv-mode org ox-reveal ensime scala-mode flycheck-flow company-flow scala-mode2 yard-mode yaml-mode use-package tern-auto-complete smartparens smart-tabs-mode scss-mode rust-mode ruby-tools ruby-refactor rubocop rspec-mode rainbow-mode purescript-mode paradox nyan-mode markdown-mode helm-flx gist flycheck-rust expand-region elm-mode company-tern color-theme-sanityinc-tomorrow chruby)))
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
  '(safe-local-variable-values
