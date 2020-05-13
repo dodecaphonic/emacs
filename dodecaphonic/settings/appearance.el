@@ -7,7 +7,7 @@
   (custom-set-variables
    '(custom-safe-themes
      (quote
-      ("6b2636879127bf6124ce541b1b2824800afc49c6ccd65439d6eb987dbf200c36" default))))
+      ("e1ecb0536abec692b5a5e845067d75273fe36f24d01210bf0aa5842f2a7e029f" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" default))))
   :config
   (load-theme 'doom-one))
 
@@ -31,7 +31,7 @@
 (column-number-mode t)
 
 (when (window-system)
-  (set-frame-font "Iosevka-14:weight=book"))
+  (set-frame-font "Iosevka-15:weight=book"))
 
 (provide 'appearance)
 

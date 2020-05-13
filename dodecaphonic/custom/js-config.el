@@ -7,17 +7,20 @@
   :config
   (use-package js2-refactor
     :commands (js2r-add-keybindings-with-prefix)
-    :init
+    :config
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
+    (add-hook 'js2-mode-hook #'dodecaphonic-tide-setup)
     (js2r-add-keybindings-with-prefix "C-c t"))
 
   (use-package add-node-modules-path
     :commands add-node-modules-path
-    :init
+    :config
     (add-hook 'js2-mode-hook #'add-node-modules-path))
 
   (setq js2-basic-offset 2)
   (setq js2-global-externs '("module" "require" "console" "JSON" "$" "_")))
+
+(use-package jest)
 
 (use-package tern
   :commands tern-mode
@@ -34,6 +37,6 @@
 (use-package prettier-js
   :commands prettier-js-mode)
 
-(use-package indium)
+(use-package rjsx-mode)
 
 (provide 'js-config)

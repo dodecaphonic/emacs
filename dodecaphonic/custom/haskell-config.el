@@ -22,15 +22,6 @@
   ("C-c C-k" . haskell-interactive-mode-clear)
   ("C-c c" . haskell-process-cabal))
 
-
-(use-package dante
-  :ensure t
-  :after haskell-mode
-  :commands 'dante-mode
-  :init
-  (add-hook 'haskell-mode-hook 'dante-mode)
-  (add-hook 'dante-mode-hook 'flycheck-mode))
-
 (provide 'haskell-config)
 
 ;;; haskell-config.el ends here

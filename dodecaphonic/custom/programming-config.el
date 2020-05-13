@@ -33,9 +33,8 @@
   (show-smartparens-global-mode t))
 
 (use-package flycheck
-  :init
-  (global-flycheck-mode)
   :config
+  (global-flycheck-mode)
   (use-package flycheck-pos-tip)
   (with-eval-after-load 'flycheck
     (flycheck-pos-tip-mode)
@@ -43,19 +42,20 @@
 
 (use-package smart-tabs-mode)
 
-(use-package gist)
-
 (use-package yasnippet)
 
 (use-package expand-region)
 
 (use-package json)
 
-(use-package lsp-mode
-  :commands lsp)
+(use-package hydra :ensure t)
 
-(use-package lsp-ui
-  :after lsp-mode)
+(use-package lsp-mode
+  :commands lsp
+  :init
+  (add-hook 'prog-mode-hook 'lsp-mode))
+
+(use-package lsp-ui :ensure t)
 
 (use-package company-lsp :commands company-lsp)
 
@@ -72,7 +72,10 @@
   :ensure t)
 
 (use-package dap-mode
-  :after lsp-mode)
+  :ensure t :after lsp-mode
+  :config
+  (dap-mode t)
+  (dap-ui-mode t))
 
 (provide 'programming-config)
 

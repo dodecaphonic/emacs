@@ -8,6 +8,5 @@
 ;;; Code:
 
 (use-package nix-mode)
-(use-package nix-sandbox)
 
 ;;; nix-config.el ends here

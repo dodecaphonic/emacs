@@ -1,15 +1,13 @@
 (use-package typescript-mode
   :config
-  (use-package tide
-    :config
-    (defun dodecaphonic-tide-setup ()
-      (tide-setup)
-      (flycheck-mode t)
-      (setq typescript-indent-level 2)
-      (setq flycheck-check-syntax-automatically '(save mode-enabled))
-      (eldoc-mode t))
-    (add-hook 'before-save-hook 'tide-format-before-save)
-    (add-hook 'typescript-mode-hook #'dodecaphonic-tide-setup)))
+  (add-hook 'typescript-mode-hook #'direnv-update-environment))
+
+(use-package tide
+  :bind
+  (("C-c TAB" . tide-fix))
+  :config
+  (add-hook 'before-save-hook 'tide-format-before-save)
+  (add-hook 'typescript-mode-hook #'dodecaphonic-tide-setup))
 
 (with-eval-after-load "web-config"
   (require 'web-mode)
@@ -19,5 +17,7 @@
             (lambda ()
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
                 (tide-setup)))))
+
+(use-package ob-typescript)
 
 (provide 'typescript-config)

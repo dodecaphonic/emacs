@@ -6,6 +6,7 @@
   (set (make-local-variable 'tab-width) 2)
   (setq ruby-insert-encoding-magic-comment nil)
   (add-hook 'ruby-mode-hook 'flycheck-mode)
+  (add-hook 'ruby-mode-hook #'direnv-update-environment)
   (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
   (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
@@ -33,7 +34,6 @@
     (add-hook 'ruby-mode-hook 'yard-mode))
 
   (use-package rspec-mode)
-  (use-package haml-mode)
 
   :bind
   ("C-c =" . dodecaphonic/align=)
