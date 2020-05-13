@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: loop-home-service-call
+# key: lhomsc
+# group: Loop
+# --
+
+const fetch = fetchWithMetricsAndCodec($1, $2);
+
+export default function $3($4): LoopHomeM<$5> {
+  return pipe(
+    readerTaskEither.ask<LoopHomeConfiguration, Error>(),
+    readerTaskEither.chain((config: LoopHomeConfiguration): LoopHomeM<$5> =>
+      pipe(
+        fetch($6),
+        readerTaskEither.fromTaskEither
+      )
+    )
+  )
+}

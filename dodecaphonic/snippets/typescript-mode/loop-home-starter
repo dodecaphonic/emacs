@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: loop-home-starter
+# key: lhoms
+# group: Loop
+# --
+
+import { pipe } from "fp-ts/lib/pipeable";
+import * as array from "fp-ts/lib/Array";
+import * as either from "fp-ts/lib/Either";
+import * as option from "fp-ts/lib/Option";
+import * as readerTaskEither from "fp-ts/lib/ReaderTaskEither";
