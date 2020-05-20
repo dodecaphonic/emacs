@@ -1,13 +1,13 @@
 (use-package typescript-mode
   :config
-  (add-hook 'typescript-mode-hook #'direnv-update-environment))
+  (add-hook 'typescript-mode-hook #'direnv-update-environment)
+  (add-hook 'typescript-mode-hook #'dodecaphonic-tide-setup))
 
 (use-package tide
   :bind
   (("C-c TAB" . tide-fix))
   :config
-  (add-hook 'before-save-hook 'tide-format-before-save)
-  (add-hook 'typescript-mode-hook #'dodecaphonic-tide-setup))
+  (add-hook 'before-save-hook 'tide-format-before-save))
 
 (with-eval-after-load "web-config"
   (require 'web-mode)
