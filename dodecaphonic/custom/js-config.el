@@ -20,7 +20,10 @@
   (setq js2-basic-offset 2)
   (setq js2-global-externs '("module" "require" "console" "JSON" "$" "_")))
 
-(use-package jest)
+(use-package jest
+  :bind
+  ("C-c , v" . jest-file)
+  ("C-c , s" . jest-function))
 
 (use-package tern
   :commands tern-mode
