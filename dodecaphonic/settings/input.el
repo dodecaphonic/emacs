@@ -34,11 +34,11 @@
 (setq mac-command-modifier 'meta)
 
 (use-package company
-  :commands (company-mode global-company-mode)
+  :commands company-mode
+  :init
+  (add-hook 'after-init-hook 'global-company-mode)
   :config
-  (add-hook 'after-init-hook
-            (lambda ()
-              (message "Initialized global-company-mode")
-              (global-company-mode))))
+  (setq company-tooltip-align-annotations t))
+
 
 (provide 'input)

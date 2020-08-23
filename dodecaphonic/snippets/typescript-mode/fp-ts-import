@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: fp-ts-import
+# key: fptc
+# --
+
+import * as $1 from "fp-ts/lib/${1:$$(dodecaphonic/capitalize-first-char yas-text)}";

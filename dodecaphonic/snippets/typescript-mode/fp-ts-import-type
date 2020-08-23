@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: fp-ts-import-type
+# key: fptt
+# --
+
+import { $1 } from "fp-ts/lib/$1";

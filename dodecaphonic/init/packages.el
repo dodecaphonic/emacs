@@ -14,8 +14,6 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-(package-initialize)
-
 (when (online?)
   (unless package-archive-contents (package-refresh-contents)))
 
