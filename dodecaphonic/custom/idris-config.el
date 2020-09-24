@@ -2,9 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package idris-mode
-  :config
-  (use-package helm-idris))
+(use-package idris-mode)
 
 (provide 'idris-config)
 
