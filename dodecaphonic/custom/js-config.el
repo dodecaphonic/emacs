@@ -23,7 +23,8 @@
 (use-package jest
   :bind
   ("C-c , v" . jest-file)
-  ("C-c , s" . jest-function))
+  ("C-c , s" . jest-function)
+  ("C-c , t" . dodecaphonic/jest-jump-between-test-and-impl))
 
 (use-package tern
   :commands tern-mode
