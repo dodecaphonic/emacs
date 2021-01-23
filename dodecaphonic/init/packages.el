@@ -14,14 +14,8 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-(when (online?)
-  (unless package-archive-contents (package-refresh-contents)))
-
-(when (not (package-installed-p 'paradox))
-  (package-install 'paradox))
-
-(when (not (package-installed-p 'use-package))
-  (package-install 'use-package))
+;; (when (online?)
+;;   (unless package-archive-contents (package-refresh-contents)))
 
 (require 'use-package)
 (setq use-package-always-ensure t)

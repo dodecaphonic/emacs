@@ -22,6 +22,16 @@
   ("C-c C-k" . haskell-interactive-mode-clear)
   ("C-c c" . haskell-process-cabal))
 
+(use-package lsp-haskell
+  :config
+  (add-hook 'haskell-mode-hook #'lsp))
+
+(use-package ormolu
+  :hook (haskell-mode . ormolu-format-on-save-mode)
+  :bind
+  (:map haskell-mode-map
+        ("C-c r" . ormolu-format-buffer)))
+
 (provide 'haskell-config)
 
 ;;; haskell-config.el ends here
