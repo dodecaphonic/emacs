@@ -31,7 +31,7 @@
 (column-number-mode t)
 
 (when (window-system)
-  (set-frame-font "Iosevka-15"))
+  (set-frame-font "Iosevka-15:weight=book"))
 
 (provide 'appearance)
 
