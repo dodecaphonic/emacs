@@ -35,13 +35,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("e1ecb0536abec692b5a5e845067d75273fe36f24d01210bf0aa5842f2a7e029f" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" default))
+   '("77113617a0642d74767295c4408e17da3bfd9aa80aaa2b4eeb34680f6172d71a" "e1ecb0536abec692b5a5e845067d75273fe36f24d01210bf0aa5842f2a7e029f" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" default))
  '(package-selected-packages
    '(company-lsp add-node-modules-path yard-mode yaml-mode web-mode use-package treemacs-projectile treemacs-magit tide tern spaceline smartparens smart-tabs-mode scss-mode rust-mode rust-auto-use ruby-tools ruby-refactor rubocop rspec-mode rjsx-mode rainbow-mode rainbow-delimiters purescript-mode psc-ide prettier-js paradox org-roam ob-typescript nyan-mode nix-mode maven-test-mode lsp-ui lsp-java kotlin-mode js2-refactor jest idris-mode haskell-mode groovy-mode groovy-imports graphviz-dot-mode flycheck-rust flycheck-pos-tip flycheck-elm expand-region elm-mode doom-themes direnv darkroom counsel-projectile company-terraform auto-complete))
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
  '(safe-local-variable-values
-   '((cljr-favor-prefix-notation . t)
+   '((eval prettier-js-mode t)
+     (prettier-js-mode . t)
+     (prettier-js-mode)
+     (cljr-favor-prefix-notation . t)
      (eval progn
            (put 'defendpoint 'clojure-doc-string-elt 3)
            (put 'defendpoint-async 'clojure-doc-string-elt 3)
