@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: react-and-props-import
+# key: imprps
+# --
+import PropTypes from "prop-types";
+import React from "react";
