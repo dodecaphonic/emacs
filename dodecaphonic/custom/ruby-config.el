@@ -7,6 +7,11 @@
   (setq ruby-insert-encoding-magic-comment nil)
   (add-hook 'ruby-mode-hook 'flycheck-mode)
   (add-hook 'ruby-mode-hook #'direnv-update-environment)
+  (add-hook 'ruby-mode-hook
+            (lambda ()
+              (set (make-local-variable 'flycheck-command-wrapper-function)
+                    (lambda (command)
+                      (append '("bundle" "exec") command)))))
   (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
   (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
