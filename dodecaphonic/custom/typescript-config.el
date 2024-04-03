@@ -5,9 +5,7 @@
 
 (use-package tide
   :bind
-  (("C-c TAB" . tide-fix))
-  :config
-  (add-hook 'before-save-hook 'tide-format-before-save))
+  (("C-c TAB" . tide-fix)))
 
 (with-eval-after-load "web-config"
   (require 'web-mode)
