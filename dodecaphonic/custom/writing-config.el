@@ -4,7 +4,13 @@
 
 (use-package markdown-mode)
 
-(use-package org)
+(use-package org
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((shell . t)
+     (ruby . t)
+     (haskell . t))))
 
 (use-package darkroom)
 
