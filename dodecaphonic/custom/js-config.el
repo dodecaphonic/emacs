@@ -9,7 +9,6 @@
     :commands (js2r-add-keybindings-with-prefix)
     :config
     (add-hook 'js2-mode-hook #'js2-refactor-mode)
-    (add-hook 'js2-mode-hook #'dodecaphonic-tide-setup)
     (js2r-add-keybindings-with-prefix "C-c t"))
 
   (use-package add-node-modules-path
@@ -25,18 +24,6 @@
   ("C-c , v" . jest-file)
   ("C-c , s" . jest-function)
   ("C-c , t" . dodecaphonic/jest-jump-between-test-and-impl))
-
-(use-package tern
-  :commands tern-mode
-  :config
-  (use-package company-tern
-    :config
-    (use-package tern-auto-complete
-      :config
-      (with-eval-after-load 'company
-        (require 'company-tern)
-        (require 'tern-auto-complete)
-        (add-to-list 'company-backends 'company-tern)))))
 
 (use-package prettier-js
   :commands prettier-js-mode)
