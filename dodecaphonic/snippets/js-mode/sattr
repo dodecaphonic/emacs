@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: sattr
+# key: sattr
+# --
+{
+  "name": "$1",
+  "strategy_class": "Marketplace::SourceStrategy::$2",
+  "strategy_options": {
+    $3
+  }
+}

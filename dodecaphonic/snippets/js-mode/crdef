@@ -1,0 +1,33 @@
+# -*- mode: snippet -*-
+# name: crdef
+# key: crdef
+# --
+[
+  {
+    "domain": {
+      "name": "$1",
+      "host": "$2",
+      "scheme": "https"
+    },
+    "pages": [
+      {
+        "path": "$3",
+        "parent_page": false
+      }
+    ],
+    "page_rules": [
+      {
+        "path_segments": [
+          "$4"
+        ],
+        "fragment_selector": null
+      }
+    ],
+    "source_rules": [
+      $5
+    ],
+    "source_attribute_rules": [
+    ],
+    "practice_eligibility_checks": []
+  }
+]
