@@ -2,7 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package counsel)
+
 (use-package ivy
+  :after counsel
   :config
   (ivy-mode t)
   (counsel-mode t)
@@ -15,7 +18,7 @@
   ("C-x C-m" . counsel-M-x))
 
 (use-package counsel-projectile
-  :after ivy
+  :after ivy projectile
   :bind
   ("C-c p" . projectile-command-map)
   ("C-c p f" . counsel-projectile-find-file)
