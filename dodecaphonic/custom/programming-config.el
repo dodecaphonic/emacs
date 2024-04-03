@@ -19,14 +19,12 @@
   (add-hook 'local-write-file-hooks
             '(lambda()
                (save-excursion
-                 (untabify (point-min) (point-max))
-                 (delete-trailing-whitespace)))))
+                 (unless go-mode-map
+                   (untabify (point-min) (point-max)
+                             (delete-trailing-whitespace)
+                             ))))))
 
 (add-hook 'prog-mode-hook 'programming-custom)
-
-(use-package rainbow-delimiters
-  :config
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (use-package smartparens
   :config
@@ -40,32 +38,19 @@
     (flycheck-pos-tip-mode)
     (setq flycheck-check-syntax-automatically '(mode-enabled save))))
 
-(use-package smart-tabs-mode)
-
 (use-package yasnippet)
-
-(use-package expand-region)
 
 (use-package json)
 
-(use-package hydra :ensure t)
-
 (use-package lsp-mode
+  :ensure t
   :commands lsp
-  :init
-  (add-hook 'prog-mode-hook 'lsp-mode))
+  :hook ((haskell-mode . lsp-deferred))
+  :commands (lsp lsp-deffered))
 
 (use-package lsp-ui :ensure t)
 
-(use-package company-lsp :commands company-lsp)
-
-(use-package treemacs
-  :ensure t
-  :defer t)
-
-(use-package treemacs-projectile
-  :after treemacs projectile
-  :ensure t)
+;; (use-package company-lsp :commands company-lsp)
 
 (use-package treemacs-magit
   :after treemacs magit
@@ -76,6 +61,10 @@
   :config
   (dap-mode t)
   (dap-ui-mode t))
+
+(use-package format-all
+  :config
+  (add-hook 'prog-mode-hook 'format-all-mode))
 
 (provide 'programming-config)
 
