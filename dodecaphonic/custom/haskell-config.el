@@ -23,8 +23,7 @@
   ("C-c c" . haskell-process-cabal))
 
 (use-package lsp-haskell
-  :config
-  (add-hook 'haskell-mode-hook #'lsp))
+  :ensure t)
 
 (use-package ormolu
   :hook (haskell-mode . ormolu-format-on-save-mode)
