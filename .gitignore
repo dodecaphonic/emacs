@@ -3,7 +3,9 @@ tramp
 auto-save-list
 url
 *.elc
-elpa
+elpa/
+quelpa/
+melpa/
 projectile*
 var/
 bookmarks
@@ -13,3 +15,6 @@ ac-comphist.dat
 ensime/
 ido.last
 .tern-port
+transient/
+workspace/
+.eln-cache/
