@@ -18,30 +18,30 @@
   (autoload 'run-ruby "inf-ruby"
     "Run an inferior Ruby process")
 
-  (use-package ruby-tools
-    :config
-    (add-hook 'ruby-mode-hook 'ruby-tools-mode))
-
-  (use-package ruby-refactor
-    :init
-    (custom-set-variables
-     '(ruby-refactor-add-parens t)
-     '(ruby-refactor-keymap-prefix (kbd "C-c t")))
-    :config
-    (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch))
-
-  (use-package rubocop
-    :config
-    (add-hook 'ruby-mode-hook 'rubocop-mode))
-
-  (use-package yard-mode
-    :config
-    (add-hook 'ruby-mode-hook 'yard-mode))
-
-  (use-package rspec-mode)
-
   :bind
   ("C-c =" . dodecaphonic/align=)
   ("C-c C-d" . duplicate-current-line))
+
+(use-package ruby-tools
+  :config
+  (add-hook 'ruby-mode-hook 'ruby-tools-mode))
+
+(use-package ruby-refactor
+  :init
+  (custom-set-variables
+   '(ruby-refactor-add-parens t)
+   '(ruby-refactor-keymap-prefix (kbd "C-c t")))
+  :config
+  (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch))
+
+(use-package rubocop
+  :config
+  (add-hook 'ruby-mode-hook 'rubocop-mode))
+
+(use-package yard-mode
+  :config
+  (add-hook 'ruby-mode-hook 'yard-mode))
+
+(use-package rspec-mode)
 
 (provide 'ruby-config)
