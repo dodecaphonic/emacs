@@ -42,6 +42,8 @@
 (when (window-system)
   (set-frame-font "Iosevka-12:weight=book"))
 
+(add-to-list 'default-frame-alist '(font . "Iosevka-12:weight=book"))
+
 (provide 'appearance)
 
 ;;; appearance.el ends here
