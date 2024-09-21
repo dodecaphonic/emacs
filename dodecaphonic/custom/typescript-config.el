@@ -1,3 +1,6 @@
+;;; typescript-config.el --- TypeScript programming configuration
+;;; Commentary:
+;;; Code:
 (use-package typescript-mode
   :config
   (add-hook 'typescript-mode-hook #'direnv-update-environment)
@@ -16,6 +19,6 @@
               (when (string-equal "tsx" (file-name-extension buffer-file-name))
                 (tide-setup)))))
 
-(use-package ob-typescript)
-
 (provide 'typescript-config)
+;;; typescript-config.el ends here
+

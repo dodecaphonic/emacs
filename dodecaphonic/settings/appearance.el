@@ -28,6 +28,26 @@
                                        "\\\\" "://"))
   (global-ligature-mode t))
 
+(use-package solaire-mode
+  :config
+  (solaire-global-mode t))
+
+(use-package golden-ratio
+  :config
+  (golden-ratio-mode t))
+
+(use-package nerd-icons
+  :ensure t
+  :if (display-graphic-p))
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode t)
+  :config (column-number-mode t)
+  :custom
+  (doom-modeline-time 't)
+  (doom-modeline-vcs-max-length 50))
+
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 

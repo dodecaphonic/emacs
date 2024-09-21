@@ -66,6 +66,10 @@
   :config
   (add-hook 'prog-mode-hook 'format-all-mode))
 
+(use-package treesit-auto
+  :config
+  (global-treesit-auto-mode))
+
 (provide 'programming-config)
 
 ;;; programming-config.el ends here
