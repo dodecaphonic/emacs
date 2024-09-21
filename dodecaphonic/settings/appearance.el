@@ -32,10 +32,6 @@
   :config
   (solaire-global-mode t))
 
-(use-package golden-ratio
-  :config
-  (golden-ratio-mode t))
-
 (use-package nerd-icons
   :ensure t
   :if (display-graphic-p))
