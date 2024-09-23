@@ -56,7 +56,10 @@
 (column-number-mode t)
 
 (when (window-system)
-  (set-frame-font "Iosevka-12:weight=book"))
+  (set-frame-font
+    (if (eq system-type 'darwin)
+        "Iosevka-16"
+      "Iosevka-12:weight=book")))
 
 (add-to-list 'default-frame-alist '(font . "Iosevka-12:weight=book"))
 
