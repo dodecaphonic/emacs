@@ -11,4 +11,6 @@
 
 (use-package rainbow-mode)
 
+(use-package haml-mode)
+
 (provide 'web-config)
