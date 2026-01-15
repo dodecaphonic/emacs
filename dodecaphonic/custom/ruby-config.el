@@ -12,11 +12,6 @@
               (set (make-local-variable 'flycheck-command-wrapper-function)
                     (lambda (command)
                       (append '("bundle" "exec") command)))))
-  (add-hook 'before-save-hook
-          (lambda ()
-            (when (and (boundp 'lsp-mode)
-                      lsp-mode)  ; only when LSP is enabled
-              (lsp-format-buffer))))
   (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
   (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 

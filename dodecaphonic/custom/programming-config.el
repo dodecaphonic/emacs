@@ -42,20 +42,6 @@
 
 (use-package json)
 
-(use-package lsp-mode
-  :ensure t
-  :commands lsp
-  :hook ((haskell-mode . lsp-deferred))
-  :commands (lsp lsp-deffered))
-
-(use-package lsp-ui :ensure t)
-
-(use-package dap-mode
-  :ensure t :after lsp-mode
-  :config
-  (dap-mode t)
-  (dap-ui-mode t))
-
 (use-package format-all
   :config
   (add-hook 'prog-mode-hook 'format-all-mode))

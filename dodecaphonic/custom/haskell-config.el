@@ -22,9 +22,6 @@
   ("C-c C-k" . haskell-interactive-mode-clear)
   ("C-c c" . haskell-process-cabal))
 
-(use-package lsp-haskell
-  :ensure t)
-
 (provide 'haskell-config)
 
 ;;; haskell-config.el ends here

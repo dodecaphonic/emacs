@@ -13,7 +13,5 @@
      (ruby . t)
      (haskell . t))))
 
-(use-package darkroom)
-
 (provide 'writing-config)
 ;;; writing-config.el ends here

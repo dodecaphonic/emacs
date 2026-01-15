@@ -29,7 +29,7 @@
 (load-directory (concat emacs-root "dodecaphonic/settings"))
 (load-directory (concat emacs-root "dodecaphonic/commands"))
 (load-directory (concat emacs-root "dodecaphonic/custom"))
-(load-directory (concat emacs-root "dodecaphonic/lsp"))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -77,14 +77,12 @@
      ("_Caddyfile" caddy-fmt) ("_Flow" prettier) ("_Gleam" gleam)
      ("_Ledger" ledger-mode) ("_Nginx" nginxfmt)
      ("_Snakemake" snakefmt)))
- '(lsp-ruby-lsp-formatter "standard")
  '(package-selected-packages
-   '(add-node-modules-path auto-complete dap-mode darkroom direnv
-                           doom-modeline doom-themes flycheck-pos-tip
-                           flycheck-rust format-all go-mode gptel
-                           graphviz-dot-mode haml-mode handlebars-mode
-                           haskell-mode jest js2-refactor ligature
-                           lsp-haskell lsp-mode lsp-ui lv magit
+   '(add-node-modules-path auto-complete darkroom direnv doom-modeline
+                           doom-themes flycheck-pos-tip flycheck-rust
+                           format-all go-mode gptel graphviz-dot-mode
+                           haml-mode handlebars-mode haskell-mode jest
+                           js2-refactor ligature lv magit
                            markdown-mode nix-mode prettier-js psc-ide
                            purescript-mode quelpa-use-package
                            rainbow-mode rjsx-mode rspec-mode rubocop
@@ -95,11 +93,12 @@
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
  '(safe-local-variable-values
-   '((lsp-ruby-lsp-formatter . standard) (lsp-enabled-clients lsp-ruby)
-     (eval lsp-mode 't) (lsp-enabled-clients lsp-ruby-lsp)
-     (lsp-ruby-lsp-formatter . "standard") (lsp-format-on-save . t)
-     (lsp-ruby-formatter . standard) (eval lsp)
-     (lsp-ruby-lsp-use-bundler) (eval setq css-indent-offset 2)
+   '((eglot-server-programs
+      (ruby-mode "ruby-lsp" :initializationOptions
+                 (:formatter "standard" :linters ["standard"]
+                             :enabledFeatures
+                             (:codeActions t :diagnostics t
+                                           :formatting t))))
      (eval prettier-js-mode t) (prettier-js-mode . t)
      (prettier-js-mode) (cljr-favor-prefix-notation . t)
      (eval progn (put 'defendpoint 'clojure-doc-string-elt 3)

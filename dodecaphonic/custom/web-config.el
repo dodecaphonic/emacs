@@ -9,8 +9,6 @@
   (setq web-mode-code-indent-offset 2)
   (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode)))
 
-(use-package rainbow-mode)
-
 (use-package haml-mode)
 
 (provide 'web-config)
