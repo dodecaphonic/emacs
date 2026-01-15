@@ -18,3 +18,11 @@ ido.last
 transient/
 workspace/
 .eln-cache/
+eln-cache/
+tree-sitter/
+.dap-breakpoints
+.cache/
+.lsp-session*
+projects
+recentf
+org-roam.db

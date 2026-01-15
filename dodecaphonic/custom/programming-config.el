@@ -9,7 +9,7 @@
 (which-function-mode)
 
 (defun programming-custom()
-  "Defaults for all children of 'prog-mode'."
+  "Defaults for all children of \='prog-mode\='."
   (setq whitespace-line-column 80) ;; limit line length
   (setq whitespace-style '(face lines-tail))
   (setq show-trailing-whitespace t)
@@ -50,12 +50,6 @@
 
 (use-package lsp-ui :ensure t)
 
-;; (use-package company-lsp :commands company-lsp)
-
-(use-package treemacs-magit
-  :after treemacs magit
-  :ensure t)
-
 (use-package dap-mode
   :ensure t :after lsp-mode
   :config
@@ -67,7 +61,10 @@
   (add-hook 'prog-mode-hook 'format-all-mode))
 
 (use-package treesit-auto
+  :custom
+  (treesit-auto-install 'prompt)
   :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
   (global-treesit-auto-mode))
 
 (provide 'programming-config)

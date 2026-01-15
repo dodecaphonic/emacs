@@ -79,24 +79,24 @@
      ("_Snakemake" snakefmt)))
  '(lsp-ruby-lsp-formatter "standard")
  '(package-selected-packages
-   '(add-node-modules-path auto-complete company-terraform copilot
-                           counsel-projectile dap-mode darkroom direnv
+   '(add-node-modules-path auto-complete dap-mode darkroom direnv
                            doom-modeline doom-themes flycheck-pos-tip
                            flycheck-rust format-all go-mode gptel
                            graphviz-dot-mode haml-mode handlebars-mode
                            haskell-mode jest js2-refactor ligature
-                           lsp-haskell lsp-ui nix-mode ob-typescript
-                           prettier-js psc-ide quelpa-use-package
-                           rainbow-mode reformatter rjsx-mode
-                           rspec-mode rubocop ruby-refactor ruby-tools
-                           rust-auto-use scss-mode solaire-mode tide
+                           lsp-haskell lsp-mode lsp-ui lv magit
+                           markdown-mode nix-mode prettier-js psc-ide
+                           purescript-mode quelpa-use-package
+                           rainbow-mode rjsx-mode rspec-mode rubocop
+                           ruby-refactor ruby-tools rust-auto-use
+                           rust-mode smartparens solaire-mode tide
                            treemacs-magit treesit-auto typescript-mode
-                           vterm yaml-mode yard-mode))
+                           vterm web-mode yaml-mode yard-mode))
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
  '(safe-local-variable-values
-   '((lsp-enabled-clients lsp-ruby) (eval lsp-mode 't)
-     (lsp-enabled-clients lsp-ruby-lsp)
+   '((lsp-ruby-lsp-formatter . standard) (lsp-enabled-clients lsp-ruby)
+     (eval lsp-mode 't) (lsp-enabled-clients lsp-ruby-lsp)
      (lsp-ruby-lsp-formatter . "standard") (lsp-format-on-save . t)
      (lsp-ruby-formatter . standard) (eval lsp)
      (lsp-ruby-lsp-use-bundler) (eval setq css-indent-offset 2)

@@ -16,11 +16,4 @@
   ("<f2> u" . counsel-unicode-char)
   ("M-x" . counsel-M-x)
   ("C-x C-m" . counsel-M-x))
-
-(use-package counsel-projectile
-  :after ivy projectile
-  :bind
-  ("C-c p" . projectile-command-map)
-  ("C-c p f" . counsel-projectile-find-file)
-  ("C-c p d" . counsel-projectile-find-dir))
 ;;; counsel-config.el ends here
