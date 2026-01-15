@@ -1,6 +1,6 @@
-(use-package scss-mode
-  :config
-  (setq scss-compile-at-save nil))
+;; (use-package scss-mode
+;;   :config
+;;   (setq scss-compile-at-save nil))
 
 (use-package web-mode
   :config

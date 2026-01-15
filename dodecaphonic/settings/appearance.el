@@ -7,7 +7,7 @@
   (custom-set-variables
    '(custom-safe-themes
      (quote
-      ("88f7ee5594021c60a4a6a1c275614103de8c1435d6d08cc58882f920e0cec65e" "02f57ef0a20b7f61adce51445b68b2a7e832648ce2e7efb19d217b6454c1b644" "835868dcd17131ba8b9619d14c67c127aa18b90a82438c8613586331129dda63" "77113617a0642d74767295c4408e17da3bfd9aa80aaa2b4eeb34680f6172d71a" "2f1518e906a8b60fac943d02ad415f1d8b3933a5a7f75e307e6e9a26ef5bf570" "e1ecb0536abec692b5a5e845067d75273fe36f24d01210bf0aa5842f2a7e029f" "2d1fe7c9007a5b76cea4395b0fc664d0c1cfd34bb4f1860300347cdad67fb2f9" default))))
+      ("0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1" default))))
   :config
   (load-theme 'doom-one))
 
@@ -55,13 +55,9 @@
 (show-paren-mode t)
 (column-number-mode t)
 
-(when (window-system)
-  (set-frame-font
-    (if (eq system-type 'darwin)
-        "Iosevka-16"
-      "Iosevka-12:weight=book")))
-
-(add-to-list 'default-frame-alist '(font . "Iosevka-12:weight=book"))
+(if (eq system-type 'darwin)
+    (add-to-list 'default-frame-alist '(font . "Iosevka-16"))
+  (add-to-list 'default-frame-alist '(font . "Iosevka-12:weight=book")))
 
 (provide 'appearance)
 

@@ -6,6 +6,7 @@
 
 (use-package org
   :config
+  (require 'ox-md)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((shell . t)
