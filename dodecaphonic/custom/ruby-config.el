@@ -15,7 +15,6 @@
   (add-hook 'ruby-mode-hook
             (lambda ()
               (add-hook 'before-save-hook #'eglot-format-buffer)))
-  (add-hook 'ruby-mode-hook 'eglot-ensure)
   (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
   (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
