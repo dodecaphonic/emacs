@@ -78,13 +78,13 @@
      ("_Ledger" ledger-mode) ("_Nginx" nginxfmt)
      ("_Snakemake" snakefmt)))
  '(package-selected-packages
-   '(add-node-modules-path auto-complete darkroom direnv doom-modeline
-                           doom-themes flycheck-pos-tip flycheck-rust
-                           format-all go-mode gptel graphviz-dot-mode
-                           haml-mode handlebars-mode haskell-mode jest
-                           js2-refactor ligature lv magit
-                           markdown-mode nix-mode prettier-js psc-ide
-                           purescript-mode quelpa-use-package
+   '(add-node-modules-path auto-complete darkroom darkroom-mode direnv
+                           doom-modeline doom-themes flycheck-pos-tip
+                           flycheck-rust format-all go-mode gptel
+                           graphviz-dot-mode haml-mode handlebars-mode
+                           haskell-mode jest js2-refactor ligature lv
+                           magit markdown-mode nix-mode prettier-js
+                           psc-ide purescript-mode quelpa-use-package
                            rainbow-mode rjsx-mode rspec-mode rubocop
                            ruby-refactor ruby-tools rust-auto-use
                            rust-mode smartparens solaire-mode tide

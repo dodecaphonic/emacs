@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package darkroom)
+
 (use-package markdown-mode)
 
 (use-package org

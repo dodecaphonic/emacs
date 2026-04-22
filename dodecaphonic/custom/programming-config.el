@@ -46,12 +46,10 @@
   :config
   (add-hook 'prog-mode-hook 'format-all-mode))
 
-(use-package treesit-auto
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               `(web-mode . ,(eglot-alternatives
+                               '(("herb-language-server" "--stdio"))))))
 
 (provide 'programming-config)
 
