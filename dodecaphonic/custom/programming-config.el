@@ -47,8 +47,10 @@
   (add-hook 'prog-mode-hook 'eglot-ensure)
 
   (defun dodecaphonic/eglot-format-buffer ()
-    (when (eglot-current-server)
-      (eglot-format-buffer)))
+    (when (and (derived-mode-p 'prog-mode)
+               (eglot-current-server))
+      (ignore-errors
+        (eglot-format-buffer))))
 
   (add-hook 'find-file-hook 'dodecaphonic/eglot-format-buffer)
   (add-hook 'before-save-hook 'dodecaphonic/eglot-format-buffer)
