@@ -2,9 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package counsel)
+(use-package counsel :ensure t)
 
-(use-package ivy
+(use-package ivy :ensure t
   :after counsel
   :config
   (ivy-mode t)

@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package vterm
+(use-package vterm :ensure t
   :ensure t)
 
 ;;; terminal-config.el ends here

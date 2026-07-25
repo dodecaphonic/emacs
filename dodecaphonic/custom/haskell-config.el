@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package haskell-mode
+(use-package haskell-mode :ensure t
   :config
   (require 'haskell-interactive-mode)
   (require 'haskell-process)

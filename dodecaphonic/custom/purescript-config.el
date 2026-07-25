@@ -1,10 +1,10 @@
-(use-package purescript-mode
+(use-package purescript-mode :ensure t
   :commands purescript-mode
   :mode (("\\.purs$" . purescript-mode))
   :config
   (add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
 
-  (use-package psc-ide
+  (use-package psc-ide :ensure t
     :config
     (defun dodecaphonic-purescript-mode-hook ()
       (psc-ide-mode t)

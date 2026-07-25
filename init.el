@@ -1,15 +1,7 @@
-(require 'cl)
-
 (defvar emacs-root (expand-file-name "~/.emacs.d/"))
 
-;; add all the elisp directories under ~/.emacs.d to load path
-(labels ((add-path (p)
-         (add-to-list 'load-path
-                        (concat emacs-root p))))
-  (add-path "dodecaphonic/custom")
-  (add-path "vendor")
-  (add-path "utilities")
-)
+(dolist (dir '("dodecaphonic/custom" "vendor" "utilities"))
+  (add-to-list 'load-path (concat emacs-root dir)))
 
 ;; Guarantees emacs installs every required package
 (load-library
@@ -78,22 +70,23 @@
      ("_Ledger" ledger-mode) ("_Nginx" nginxfmt)
      ("_Snakemake" snakefmt)))
  '(package-selected-packages
-   '(add-node-modules-path auto-complete darkroom darkroom-mode direnv
-                           doom-modeline doom-themes flycheck-pos-tip
-                           flycheck-rust format-all go-mode gptel
-                           graphviz-dot-mode haml-mode handlebars-mode
-                           haskell-mode jest js2-refactor ligature lv
-                           magit markdown-mode nix-mode prettier-js
-                           psc-ide purescript-mode quelpa-use-package
-                           rainbow-mode rjsx-mode rspec-mode rubocop
-                           ruby-refactor ruby-tools rust-auto-use
-                           rust-mode smartparens solaire-mode tide
-                           treemacs-magit treesit-auto typescript-mode
-                           vterm web-mode yaml-mode yard-mode))
+    '(add-node-modules-path auto-complete darkroom darkroom-mode direnv
+                            doom-modeline doom-themes flycheck-pos-tip
+                            flycheck-rust go-mode gptel
+                            graphviz-dot-mode haml-mode handlebars-mode
+                            haskell-mode jest js2-refactor ligature lv
+                            magit markdown-mode nix-mode prettier-js
+                            psc-ide purescript-mode quelpa-use-package
+                            rainbow-mode rjsx-mode rspec-mode rubocop
+                            ruby-refactor ruby-tools rust-auto-use
+                            rust-mode smartparens solaire-mode
+                            treemacs-magit treesit-auto typescript-mode
+                            vterm web-mode yaml-mode yard-mode))
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
  '(safe-local-variable-values
-   '((eglot-server-programs
+   '((format-all-formatters "purs-tidy")
+     (eglot-server-programs
       (ruby-mode "ruby-lsp" :initializationOptions
                  (:formatter "standard" :linters ["standard"]
                              :enabledFeatures

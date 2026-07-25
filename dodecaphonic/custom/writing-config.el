@@ -2,9 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package darkroom)
+(use-package darkroom :ensure t)
 
-(use-package markdown-mode)
+(use-package markdown-mode :ensure t)
 
 (use-package org
   :config

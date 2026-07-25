@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package graphviz-dot-mode)
+(use-package graphviz-dot-mode :ensure t)
 
 (provide 'graphviz-config)
 

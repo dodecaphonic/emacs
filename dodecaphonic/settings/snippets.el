@@ -3,4 +3,4 @@
         (expand-file-name "dodecaphonic/snippets" user-emacs-directory)
         (expand-file-name "vendor/yasnippet/snippets" user-emacs-directory)))
 
-(yas-global-mode 1)
+(add-hook 'after-init-hook (lambda () (yas-global-mode 1)))

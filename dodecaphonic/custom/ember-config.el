@@ -1,1 +1,1 @@
-(use-package handlebars-mode)
+(use-package handlebars-mode :ensure t)

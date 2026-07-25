@@ -5,7 +5,7 @@
 
 (setq-default indent-tabs-mode nil)
 (setq require-final-newline t)
-(global-auto-revert-mode t)
+(global-auto-revert-mode 1)
 
 (setq major-mode 'text-mode)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)

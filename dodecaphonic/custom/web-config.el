@@ -2,13 +2,13 @@
 ;;   :config
 ;;   (setq scss-compile-at-save nil))
 
-(use-package web-mode
+(use-package web-mode :ensure t
   :config
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
   (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode)))
 
-(use-package haml-mode)
+(use-package haml-mode :ensure t)
 
 (provide 'web-config)

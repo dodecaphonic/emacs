@@ -32,7 +32,7 @@
 (setq mouse-yank-at-point t)
 (setq mac-command-modifier 'meta)
 
-(use-package company
+(use-package company :ensure t
   :commands company-mode
   :init
   (add-hook 'after-init-hook 'global-company-mode)

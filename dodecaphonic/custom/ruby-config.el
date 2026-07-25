@@ -1,6 +1,6 @@
-(use-package yaml-mode)
+(use-package yaml-mode :ensure t)
 
-(use-package ruby-mode
+(use-package ruby-mode :ensure t
   :config
   (set (make-local-variable 'indent-tabs-mode) 'nil)
   (set (make-local-variable 'tab-width) 2)
@@ -25,11 +25,11 @@
   ("C-c =" . dodecaphonic/align=)
   ("C-c C-d" . duplicate-current-line))
 
-(use-package ruby-tools
+(use-package ruby-tools :ensure t
   :config
   (add-hook 'ruby-mode-hook 'ruby-tools-mode))
 
-(use-package ruby-refactor
+(use-package ruby-refactor :ensure t
   :init
   (custom-set-variables
    '(ruby-refactor-add-parens t)
@@ -37,14 +37,14 @@
   :config
   (add-hook 'ruby-mode-hook 'ruby-refactor-mode-launch))
 
-(use-package rubocop
+(use-package rubocop :ensure t
   :config
   (add-hook 'ruby-mode-hook 'rubocop-mode))
 
-(use-package yard-mode
+(use-package yard-mode :ensure t
   :config
   (add-hook 'ruby-mode-hook 'yard-mode))
 
-(use-package rspec-mode)
+(use-package rspec-mode :ensure t)
 
 (provide 'ruby-config)

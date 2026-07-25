@@ -1,5 +1,5 @@
-(use-package multiple-cursors)
+(use-package multiple-cursors :ensure t)
 
-(use-package auto-complete)
+(use-package auto-complete :ensure t)
 
 (windmove-default-keybindings)

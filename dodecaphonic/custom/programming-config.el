@@ -26,30 +26,50 @@
 
 (add-hook 'prog-mode-hook 'programming-custom)
 
-(use-package smartparens
+(use-package smartparens :ensure t
   :config
   (show-smartparens-global-mode t))
 
-(use-package flycheck
+(use-package flycheck :ensure t
   :config
   (global-flycheck-mode)
-  (use-package flycheck-pos-tip)
+  (use-package flycheck-pos-tip :ensure t)
   (with-eval-after-load 'flycheck
     (flycheck-pos-tip-mode)
     (setq flycheck-check-syntax-automatically '(mode-enabled save))))
 
-(use-package yasnippet)
+(use-package yasnippet :ensure t)
 
 (use-package json)
 
-(use-package format-all
+(use-package eglot
   :config
-  (add-hook 'prog-mode-hook 'format-all-mode))
+  (add-hook 'prog-mode-hook 'eglot-ensure)
 
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               `(web-mode . ,(eglot-alternatives
-                               '(("herb-language-server" "--stdio"))))))
+  (defun dodecaphonic/eglot-format-buffer ()
+    (when (eglot-current-server)
+      (eglot-format-buffer)))
+
+  (add-hook 'find-file-hook 'dodecaphonic/eglot-format-buffer)
+  (add-hook 'before-save-hook 'dodecaphonic/eglot-format-buffer)
+
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs
+                 '((js-mode js2-mode) . ("typescript-language-server" "--stdio")))
+    (add-to-list 'eglot-server-programs
+                 '(web-mode . ("typescript-language-server" "--stdio")))
+    (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
+    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+    (add-to-list 'eglot-server-programs '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
+    (add-to-list 'eglot-server-programs '(purescript-mode . ("purescript-language-server" "--stdio")))
+    (add-to-list 'eglot-server-programs
+                 '((html-mode web-mode) . ,(eglot-alternatives
+                                             '(("vscode-html-language-server" "--stdio")
+                                               ("html-languageserver" "--stdio")))))
+    (add-to-list 'eglot-server-programs
+                 '((css-mode css-ts-mode) . ,(eglot-alternatives
+                                               '(("vscode-css-language-server" "--stdio")
+                                                 ("css-languageserver" "--stdio")))))))
 
 (provide 'programming-config)
 

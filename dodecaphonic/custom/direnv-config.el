@@ -2,7 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package direnv
+(use-package direnv :ensure t
   :hook (flycheck-before-syntax-check . direnv-update-environment)
   :config
   (direnv-mode))

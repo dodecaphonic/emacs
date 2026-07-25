@@ -1,4 +1,4 @@
-(use-package js2-mode
+(use-package js2-mode :ensure t
   :commands js2-mode
   :mode
   ("\\.js$" . js2-mode)
@@ -19,15 +19,15 @@
   (setq js2-basic-offset 2)
   (setq js2-global-externs '("module" "require" "console" "JSON" "$" "_")))
 
-(use-package jest
+(use-package jest :ensure t
   :bind
   ("C-c , v" . jest-file)
   ("C-c , s" . jest-function)
   ("C-c , t" . dodecaphonic/jest-jump-between-test-and-impl))
 
-(use-package prettier-js
+(use-package prettier-js :ensure t
   :commands prettier-js-mode)
 
-(use-package rjsx-mode)
+(use-package rjsx-mode :ensure t)
 
 (provide 'js-config)
