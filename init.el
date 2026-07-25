@@ -80,7 +80,7 @@
                             rainbow-mode rjsx-mode rspec-mode rubocop
                             ruby-refactor ruby-tools rust-auto-use
                             rust-mode smartparens solaire-mode
-                            treemacs-magit treesit-auto typescript-mode
+                             treemacs-magit typescript-mode
                             vterm web-mode yaml-mode yard-mode))
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
