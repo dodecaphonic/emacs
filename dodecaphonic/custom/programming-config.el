@@ -47,8 +47,14 @@
   (global-diff-hl-mode)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
+(use-package flycheck-eglot :ensure t
+  :after flycheck eglot
+  :config
+  (global-flycheck-eglot-mode 1))
+
 (use-package eglot
   :config
+  (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
   (defun dodecaphonic/eglot-ensure-after-direnv ()
     (direnv-update-environment)
     (eglot-ensure))
