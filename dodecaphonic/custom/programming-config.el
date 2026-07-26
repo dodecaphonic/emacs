@@ -44,11 +44,15 @@
 
 (use-package eglot
   :config
+  (defun dodecaphonic/eglot-ensure-after-direnv ()
+    (direnv-update-environment)
+    (eglot-ensure))
+
   (add-hook 'purescript-mode-hook 'eglot-ensure)
-  (add-hook 'typescript-mode-hook 'eglot-ensure)
+  (add-hook 'typescript-mode-hook 'dodecaphonic/eglot-ensure-after-direnv)
   (add-hook 'js2-mode-hook 'eglot-ensure)
   (add-hook 'rust-mode-hook 'eglot-ensure)
-  (add-hook 'ruby-mode-hook 'eglot-ensure)
+  (add-hook 'ruby-mode-hook 'dodecaphonic/eglot-ensure-after-direnv)
 
   (defun dodecaphonic/eglot-format-buffer ()
     (when (and (eglot-current-server)

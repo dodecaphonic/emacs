@@ -6,7 +6,6 @@
   (set (make-local-variable 'tab-width) 2)
   (setq ruby-insert-encoding-magic-comment nil)
   (add-hook 'ruby-mode-hook 'flycheck-mode)
-  (add-hook 'ruby-mode-hook #'direnv-update-environment)
   (add-hook 'ruby-mode-hook
             (lambda ()
               (set (make-local-variable 'flycheck-command-wrapper-function)

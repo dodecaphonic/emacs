@@ -1,10 +1,7 @@
 (use-package typescript-mode :ensure t
   :mode ("\\.ts\\'" . typescript-mode)
+  :mode ("\\.tsx\\'" . typescript-mode)
   :config
-  (add-hook 'typescript-mode-hook #'direnv-update-environment))
-
-(with-eval-after-load "web-config"
-  (require 'web-mode)
-  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
+  (add-hook 'typescript-mode-hook #'prettier-js-mode))
 
 (provide 'typescript-config)
