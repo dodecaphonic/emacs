@@ -42,6 +42,11 @@
 
 (use-package json)
 
+(use-package diff-hl :ensure t
+  :config
+  (global-diff-hl-mode)
+  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
+
 (use-package eglot
   :config
   (defun dodecaphonic/eglot-ensure-after-direnv ()
