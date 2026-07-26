@@ -44,15 +44,18 @@
 
 (use-package eglot
   :config
-  (add-hook 'prog-mode-hook 'eglot-ensure)
+  (add-hook 'purescript-mode-hook 'eglot-ensure)
+  (add-hook 'typescript-mode-hook 'eglot-ensure)
+  (add-hook 'js2-mode-hook 'eglot-ensure)
+  (add-hook 'rust-mode-hook 'eglot-ensure)
+  (add-hook 'ruby-mode-hook 'eglot-ensure)
 
   (defun dodecaphonic/eglot-format-buffer ()
-    (when (and (derived-mode-p 'prog-mode)
-               (eglot-current-server))
+    (when (and (eglot-current-server)
+               (not (derived-mode-p 'js2-mode 'typescript-mode)))
       (ignore-errors
         (eglot-format-buffer))))
 
-  (add-hook 'find-file-hook 'dodecaphonic/eglot-format-buffer)
   (add-hook 'before-save-hook 'dodecaphonic/eglot-format-buffer)
 
   (with-eval-after-load 'eglot
@@ -64,14 +67,15 @@
     (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
     (add-to-list 'eglot-server-programs '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
     (add-to-list 'eglot-server-programs '(purescript-mode . ("purescript-language-server" "--stdio")))
+    (add-to-list 'eglot-server-programs '(ruby-mode . ("ruby-lsp")))
     (add-to-list 'eglot-server-programs
                  '((html-mode web-mode) . ,(eglot-alternatives
-                                             '(("vscode-html-language-server" "--stdio")
-                                               ("html-languageserver" "--stdio")))))
+                                              '(("vscode-html-language-server" "--stdio")
+                                                ("html-languageserver" "--stdio")))))
     (add-to-list 'eglot-server-programs
                  '((css-mode css-ts-mode) . ,(eglot-alternatives
-                                               '(("vscode-css-language-server" "--stdio")
-                                                 ("css-languageserver" "--stdio")))))))
+                                                '(("vscode-css-language-server" "--stdio")
+                                                  ("css-languageserver" "--stdio")))))))
 
 (provide 'programming-config)
 

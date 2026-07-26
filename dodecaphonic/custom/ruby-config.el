@@ -12,9 +12,7 @@
               (set (make-local-variable 'flycheck-command-wrapper-function)
                     (lambda (command)
                       (append '("bundle" "exec") command)))))
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (add-hook 'before-save-hook #'eglot-format-buffer)))
+
   (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
   (add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
