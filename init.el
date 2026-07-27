@@ -73,7 +73,10 @@
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
  '(safe-local-variable-values
-   '((format-all-formatters "purs-tidy")
+   '((eglot-stay-out-of formatting)
+     (eglot-server-programs
+      (web-mode "herb-language-server" "--stdio"))
+     (format-all-formatters "purs-tidy")
      (eglot-server-programs
       (ruby-mode "ruby-lsp" :initializationOptions
                  (:formatter "standard" :linters ["standard"]

@@ -55,6 +55,7 @@
 (use-package eglot
   :config
   (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
+
   (defun dodecaphonic/eglot-ensure-after-direnv ()
     (direnv-update-environment)
     (eglot-ensure))
@@ -73,20 +74,32 @@
 
   (add-hook 'before-save-hook 'dodecaphonic/eglot-format-buffer)
 
+  ;; Disable multiple-cursors during minibuffer interactions (e.g., dir-locals confirmation)
+  (defun dodecaphonic/eglot-without-mc (fn &rest args)
+    (let ((mc-was-active (bound-and-true-p multiple-cursors-mode)))
+      (when mc-was-active
+        (multiple-cursors-mode -1))
+      (unwind-protect
+          (apply fn args)
+        (when mc-was-active
+          (multiple-cursors-mode 1)))))
+
+  (advice-add 'eglot-ensure :around #'dodecaphonic/eglot-without-mc)
+
   (with-eval-after-load 'eglot
-    (add-to-list 'eglot-server-programs
-                 '((js-mode js2-mode) . ("typescript-language-server" "--stdio")))
-    (add-to-list 'eglot-server-programs
-                 '(web-mode . ("typescript-language-server" "--stdio")))
-    (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
-    (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
-    (add-to-list 'eglot-server-programs '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
-    (add-to-list 'eglot-server-programs '(purescript-mode . ("purescript-language-server" "--stdio")))
-    (add-to-list 'eglot-server-programs '(ruby-mode . ("ruby-lsp")))
-    (add-to-list 'eglot-server-programs
-                 '((html-mode web-mode) . ,(eglot-alternatives
-                                              '(("vscode-html-language-server" "--stdio")
-                                                ("html-languageserver" "--stdio")))))
+      (add-to-list 'eglot-server-programs
+                   '((js-mode js2-mode) . ("typescript-language-server" "--stdio")))
+      (add-to-list 'eglot-server-programs
+                   '(web-mode . ("typescript-language-server" "--stdio")))
+      (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
+      (add-to-list 'eglot-server-programs '(go-mode . ("gopls")))
+      (add-to-list 'eglot-server-programs '(haskell-mode . ("haskell-language-server-wrapper" "--lsp")))
+      (add-to-list 'eglot-server-programs '(purescript-mode . ("purescript-language-server" "--stdio")))
+      (add-to-list 'eglot-server-programs '(ruby-mode . ("ruby-lsp")))
+      (add-to-list 'eglot-server-programs
+                   '((html-mode web-mode) . ,(eglot-alternatives
+                                                '(("vscode-html-language-server" "--stdio")
+                                                  ("html-languageserver" "--stdio")))))
     (add-to-list 'eglot-server-programs
                  '((css-mode css-ts-mode) . ,(eglot-alternatives
                                                 '(("vscode-css-language-server" "--stdio")
