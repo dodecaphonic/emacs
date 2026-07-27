@@ -46,7 +46,10 @@
 (column-number-mode t)
 
 (if (eq system-type 'darwin)
-    (add-to-list 'default-frame-alist '(font . "Iosevka-16"))
+    (progn
+      (add-to-list 'default-frame-alist '(font . "Iosevka-16"))
+      ;; Adjust font smoothing on macOS for lighter rendering
+      (setq mac-font-smoothing-mode 1))
   (add-to-list 'default-frame-alist '(font . "Iosevka-12:weight=book")))
 
 (provide 'appearance)
