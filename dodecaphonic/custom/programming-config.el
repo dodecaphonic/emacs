@@ -47,11 +47,6 @@
   (global-diff-hl-mode)
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
-(use-package flycheck-eglot :ensure t
-  :after flycheck eglot
-  :config
-  (global-flycheck-eglot-mode 1))
-
 (use-package eglot
   :config
   (add-hook 'eglot-managed-mode-hook #'eglot-inlay-hints-mode)
@@ -85,6 +80,9 @@
           (multiple-cursors-mode 1)))))
 
   (advice-add 'eglot-ensure :around #'dodecaphonic/eglot-without-mc)
+
+  ;; Enable diagnostics display via flymake (built into eglot)
+  (add-hook 'eglot-managed-mode-hook #'flymake-mode)
 
   (with-eval-after-load 'eglot
       (add-to-list 'eglot-server-programs

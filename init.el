@@ -69,11 +69,23 @@
      ("_Caddyfile" caddy-fmt) ("_Flow" prettier) ("_Gleam" gleam)
      ("_Ledger" ledger-mode) ("_Nginx" nginxfmt)
      ("_Snakemake" snakefmt)))
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(add-node-modules-path auto-complete counsel darkroom diff-hl direnv
+                           doom-themes flycheck-eglot flycheck-pos-tip
+                           flycheck-rust format-all go-mode
+                           graphviz-dot-mode haml-mode handlebars-mode
+                           haskell-mode jest js2-refactor ligature
+                           magit markdown-mode prettier-js psc-ide
+                           purescript-mode rjsx-mode rspec-mode
+                           rubocop ruby-refactor ruby-tools
+                           rust-auto-use rust-mode smartparens
+                           solaire-mode tide treesit-auto
+                           typescript-mode vterm web-mode yaml-mode
+                           yard-mode))
  '(ruby-refactor-add-parens t)
  '(ruby-refactor-keymap-prefix (kbd "C-c t"))
  '(safe-local-variable-values
-   '((eglot-stay-out-of formatting)
+   '((format-all-formatters ("Go" gofmt)) (eglot-stay-out-of formatting)
      (eglot-server-programs
       (web-mode "herb-language-server" "--stdio"))
      (format-all-formatters "purs-tidy")
